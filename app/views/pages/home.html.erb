@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Hello user.name!</h2>
+
+<h1>Ready to play?</h1>
+
+<h2>Please select your details:</h2>
+
+<!-- Look Up JS Range Picker for Time Range -->
+<!-- Come back to later -->
+
+<%= simple_form_for :offers_search, url: offers_path do |f| %>
+  <%= f.input :location%>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+
+
+<p>Please select the date & time:</p>
+  <!-- <input type="text" name="daterange" placeholder="DD-MM-YYYY" /> -->
+
+
+<input type="text" name="datetimes" />
+
+<script>
+$(function() {
+  $('input[name="datetimes"]').daterangepicker({
+    timePicker: true,
+    startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour').add(32, 'hour'),
+    locale: {
+      format: 'M/DD hh:mm A',
+    }
+  });
+});
+</script>
+<br>
+<br>
+
+
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>
