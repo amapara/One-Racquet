@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'faker'
+gem 'pg_search'
+gem 'by_star', git: "git://github.com/radar/by_star"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

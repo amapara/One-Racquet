@@ -7,6 +7,7 @@
 <!-- Look Up JS Range Picker for Time Range -->
 <!-- Come back to later -->
 
+
 <%= form_tag offers_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -14,35 +15,9 @@
     placeholder: "Find a offer"
   %>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
-
-
-
 <p>Please select the date & time:</p>
-  <!-- <input type="text" name="daterange" placeholder="DD-MM-YYYY" /> -->
 
-
-<input type="date" name="datetimes" value="" />
-
-<script>
-$(function() {
-  $('input[name="datetimes"]').daterangepicker({
-    timePicker: true,
-    startDate: moment().startOf('hour'),
-    endDate: moment().startOf('hour').add(32, 'hour'),
-    autoUpdateInput: false
-    locale: {
-      cancelLabel: 'Clear'
-    }
-  });
-});
-</script>
-<br>
-<br>
+<%= date_field_tag :date %>
 
 
   <%= submit_tag "submit", class: "btn btn-primary" %>

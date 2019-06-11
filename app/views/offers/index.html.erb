@@ -1,10 +1,11 @@
 
 <h1>Please list your offers here</h1>
 
+
 <div class= 'col-sm-6'>
   <% @offers.each do |offer| %>
-    <div class = 'card'>
-      <h2> <%= offer.id %> - <%= offer.time %> - <%= offer.date %> <%= offer.court.address %> %></h2>
+    <div class='card'>
+      <h2> <%= offer.id %> - <%= offer.date.strftime("%b %e, %l:%M %p") %> <%= offer.court.address %></h2>
     </div>
   <% end %>
 </div>

@@ -9,6 +9,7 @@
 
 require 'faker'
 require 'date'
+require 'time'
 
 skill_sample = ["high","medium","low"]
 puts 'Creating 5 fake users...'
@@ -31,12 +32,14 @@ puts 'Creating 5 tennis courts...'
   court.save!
 end
 
+
+
 length_sample = [40,45,60,90]
 puts 'Creating 20 offers...'
 20.times do
   offer = Offer.new(
-    date: Date.today + rand(1..3),
-    time: rand(9..19),
+    date: Date.today,
+    time: Time.new,
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,
