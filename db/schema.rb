@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_182453) do
 
   create_table "offers", force: :cascade do |t|
     t.date "date"
-    t.time "time"
+    t.integer "time"
     t.integer "length"
     t.bigint "user_id"
     t.bigint "court_id"
