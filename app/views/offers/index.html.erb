@@ -1,1 +1,3 @@
-index.html.erb
+<% @offers.each do |offer| %>
+  <%= offer.id %> - <%= offer.date %>
+<% end %>

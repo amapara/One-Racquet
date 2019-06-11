@@ -7,9 +7,12 @@
 <!-- Look Up JS Range Picker for Time Range -->
 <!-- Come back to later -->
 
-<%= simple_form_for :offers_search, url: offers_path do |f| %>
-  <%= f.input :location%>
-
+<%= form_tag offers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a offer"
+  %>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -23,7 +26,7 @@
   <!-- <input type="text" name="daterange" placeholder="DD-MM-YYYY" /> -->
 
 
-<input type="text" name="datetimes" />
+<input type="text" name="datetimes" value="" />
 
 <script>
 $(function() {
@@ -33,6 +36,7 @@ $(function() {
     endDate: moment().startOf('hour').add(32, 'hour'),
     locale: {
       format: 'M/DD hh:mm A',
+      cancelLabel: 'Clear'
     }
   });
 });
@@ -41,5 +45,5 @@ $(function() {
 <br>
 
 
-  <%= f.submit "submit", class: "btn btn-primary" %>
+  <%= submit_tag "submit", class: "btn btn-primary" %>
 <% end %>
