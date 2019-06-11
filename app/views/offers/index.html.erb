@@ -1,16 +1,17 @@
 
 <h1>Please list your offers here</h1>
+<h1><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
+
 
 <h1> This working <%= Offer.last.distance %> minutes</h1>
 
 <div class= 'col-sm-6'>
   <% @offers.each do |offer| %>
     <div class = 'card'>
-      <h2> <%= offer.id %> - <%= offer.date %></h2>
+      <h2> <%= offer.id %> - <%= offer.date %> - <%= offer.time %> <%= offer.court.address  %></h2>
     </div>
   <% end %>
 </div>
-
 
 
 
