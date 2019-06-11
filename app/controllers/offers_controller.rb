@@ -6,8 +6,14 @@ class OffersController < ApplicationController
   end
 
   def index
-    if params[:query]
-      @offers = Offer.all.select { |offer| offer.court.address == params[:query]}
+
+    if params[:query] != "" && params[:datetimes] != ""
+      @offers = Offer.all.select { |offer| offer.court.address == params[:query] }
+      @offers.select { |offer| offer.date == params[:datetimes] }
+    elsif params[:query] != ""
+      @offers = Offer.all.select { |offer| offer.court.address == params[:query] }
+    elsif params[:datetimes] != ""
+      @offers = Offer.all.select { |offer| offer.date == params[:datetimes] }
     else
       @offers = Offer.all
     end

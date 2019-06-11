@@ -26,7 +26,7 @@
   <!-- <input type="text" name="daterange" placeholder="DD-MM-YYYY" /> -->
 
 
-<input type="text" name="datetimes" value="" />
+<input type="date" name="datetimes" value="" />
 
 <script>
 $(function() {
@@ -34,8 +34,8 @@ $(function() {
     timePicker: true,
     startDate: moment().startOf('hour'),
     endDate: moment().startOf('hour').add(32, 'hour'),
+    autoUpdateInput: false
     locale: {
-      format: 'M/DD hh:mm A',
       cancelLabel: 'Clear'
     }
   });
