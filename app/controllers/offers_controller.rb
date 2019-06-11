@@ -21,7 +21,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    # params.require(:user).permit(:date, :time, :length, :user_id, :court_id)
       params.require(:offer).permit(:date, :time, :length, :user_id, :court_id, :offers_search)
   end
 end
