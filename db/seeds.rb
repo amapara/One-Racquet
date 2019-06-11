@@ -10,6 +10,22 @@
 require 'faker'
 require 'date'
 
+# def rand_int(from, to)
+#   rand_in_range(from, to).to_i
+# end
+
+# def rand_price(from, to)
+#   rand_in_range(from, to).round(2)
+# end
+
+# def rand_time(from, to=Time.now)
+#   Time.at(rand_in_range(from.to_f, to.to_f))
+# end
+
+# def rand_in_range(from, to)
+#   rand * (to - from) + from
+# end
+
 skill_sample = ["high","medium","low"]
 puts 'Creating 5 fake users...'
 5.times do
@@ -36,7 +52,7 @@ puts 'Creating 20 offers...'
 20.times do
   offer = Offer.new(
     date: Date.today + rand(1..3),
-    time: rand(9..19),
+    time: rand(9..17),
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,
