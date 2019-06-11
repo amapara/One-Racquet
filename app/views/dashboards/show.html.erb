@@ -1,0 +1,14 @@
+<h1>Welcome to your dashboard, <%= @user.name %></h1>
+
+<h2 class= "align-items"> Here's a list of your offers: </h2>
+
+<ol>
+  <% @user.offers.each do |offer| %>
+  <li>
+  <%= offer.date %>
+  <%= offer.time %>
+  <%= offer.court.address %>
+  </li>
+  <% end %>
+</ol>
+
