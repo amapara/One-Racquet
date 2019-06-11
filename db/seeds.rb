@@ -22,10 +22,11 @@ puts 'Creating 5 fake users...'
   user.save!
 end
 
+address_sample = ["160 Broadway, New York, NY 10038, USA","52 Fulton St, New York, NY 10038, USA"]
 puts 'Creating 5 tennis courts...'
 5.times do
   court = Court.new(
-    address: Faker::Address.full_address,
+    address: address_sample.sample,
     price: rand(5..20)
     )
   court.save!

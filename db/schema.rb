@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_182453) do
     t.date "date"
     t.integer "time"
     t.integer "length"
+    t.integer "distance"
     t.bigint "user_id"
     t.bigint "court_id"
     t.datetime "created_at", null: false

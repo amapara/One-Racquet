@@ -1,6 +1,8 @@
 
 <h1>Please list your offers here</h1>
 
+<h1> This working <%= Offer.last.distance %> minutes</h1>
+
 <div class= 'col-sm-6'>
   <% @offers.each do |offer| %>
     <div class = 'card'>
@@ -8,4 +10,7 @@
     </div>
   <% end %>
 </div>
+
+
+
 

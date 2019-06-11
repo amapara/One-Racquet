@@ -4,6 +4,7 @@ class CreateOffers < ActiveRecord::Migration[5.2]
       t.date :date
       t.integer :time
       t.integer :length
+      t.integer :distance
       t.references :user, foreign_key: true
       t.references :court, foreign_key: true
 
