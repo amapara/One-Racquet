@@ -17,11 +17,12 @@ puts 'Creating 5 fake users...'
 end
 
 address_sample = ["160 Broadway, New York, NY 10038, USA","52 Fulton St, New York, NY 10038, USA"]
-puts 'Creating 5 tennis courts...'
-5.times do
+puts 'Creating 10 tennis courts...'
+10.times do
   court = Court.new(
     address: address_sample.sample,
-    price: rand(5..20)
+    price: rand(5..20),
+    name: Faker::Movies::HarryPotter.house + " Club est. " + rand(1870..1999).to_s
     )
   court.save!
 end
@@ -47,5 +48,3 @@ puts 'Creating 10 bookings...'
     )
   booking.save!
 end
-
-

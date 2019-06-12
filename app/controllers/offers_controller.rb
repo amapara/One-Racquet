@@ -30,7 +30,7 @@ class OffersController < ApplicationController
     @offer.user = current_user
     if @offer.save
     #no need for app/views/offers/create.html.erb
-      redirect_to offers_path(@offer), notice: "Your offer was created!"
+      redirect_to dashboard_path, notice: "Your offer was created!"
     else
       render 'new'
     end
