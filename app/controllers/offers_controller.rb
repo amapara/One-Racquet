@@ -12,17 +12,15 @@ class OffersController < ApplicationController
     @offer = Offer.new
   end
 
-  def index
+    def index
 
     start_date = params[:start_date]
-    start_parse = Date.parse(start_date)
-    start_time = start_parse.strftime("%l").to_i
+    start_split = start_date.split("")
+    start_time = "#{start_split[-5]}#{start_split[-4]}".to_i
 
     end_date = params[:end_date]
-    end_parse = Date.parse(end_date)
-    end_time = end_parse.strftime("%l").to_i
-
-    raise
+    end_split = end_date.split("")
+    end_time = "#{end_split[-5]}#{end_split[-4]}".to_i
 
     @offers = Offer.where(match_at: start_date..end_date)
 
@@ -34,8 +32,6 @@ class OffersController < ApplicationController
         @offer_filt << offer
       end
     end
-
-    raise
 
     if params[:query]
       @location = params[:query]
