@@ -5,7 +5,7 @@
 
 <div class= 'col-sm-6'>
   <% @offers.each do |offer| %>
-    <div class = 'card'>
+    <div class = 'card img-on-top'>
       <h2> <%= offer.id %> - <%= offer.date %> - <%= offer.time %> <%= offer.court.address  %></h2>
     </div>
   <% end %>
