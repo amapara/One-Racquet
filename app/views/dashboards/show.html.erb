@@ -1,14 +1,37 @@
 <h1>Welcome to your dashboard, <%= @user.name %></h1>
 
-<h2 class= "align-items"> Here's a list of your offers: </h2>
+<h2 class= "align-items"> Here's a list of your OFFERS: </h2>
 
 <ol>
   <% @user.offers.each do |offer| %>
+  <% if offer.booked? == false %>
   <li>
-  <%= offer.date %>
-  <%= offer.time %>
-  <%= offer.court.address %>
+    <%= offer.date %>
+    <%= offer.time %>
+    <%= offer.court.address %>
   </li>
   <% end %>
+<% end %>
 </ol>
 
+<h2 class= "align-items"> Here's a list of your BOOKINGS: </h2>
+<% booking_array = [] %>
+<% @user.offers.each do |offer| %>
+<% if offer.booked? == true %>
+<% booking_array << offer %>
+<% end %>
+<% end %>
+
+<% if booking_array.empty? %>
+<p> No bookings in list <p>
+  <% else %>
+  <ol>
+  <% booking_array.each do |offer_array| %>
+    <li>
+      <%= offer_array.date %>
+      <%= offer_array.time %>
+      <%= offer_array.court.address %>
+    </li>
+  <% end %>
+  </ol>
+  <%end %>
