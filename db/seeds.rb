@@ -30,8 +30,7 @@ length_sample = [40,45,60,90]
 puts 'Creating 20 offers...'
 20.times do
   offer = Offer.new(
-    date: Date.today + rand(1..3),
-    time: rand(9..17),
+    match_at: DateTime.now + (rand(0..72)/24.0),
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,

@@ -1,9 +1,10 @@
 require 'json'
 require 'open-uri'
+require 'date'
 
 class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-# !! When removing skip_before_action: take out :user_id from offer_params
+# !! When removing skzip_before_action: take out :user_id from offer_params
 # AND from simple_form at /offers/new  !!
 
   def new
@@ -12,7 +13,30 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+
+    start_date = params[:start_date]
+    start_parse = Date.parse(start_date)
+    start_time = start_parse.strftime("%l").to_i
+
+    end_date = params[:end_date]
+    end_parse = Date.parse(end_date)
+    end_time = end_parse.strftime("%l").to_i
+
+    raise
+
+    @offers = Offer.where(match_at: start_date..end_date)
+
+    @offer_filt = []
+
+    @offers.each do |offer|
+      time = offer.match_at.hour
+      if time < end_time && time > start_time
+        @offer_filt << offer
+      end
+    end
+
+    raise
+
     if params[:query]
       @location = params[:query]
       @offers.each do |offer|
