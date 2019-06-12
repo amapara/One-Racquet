@@ -33,8 +33,6 @@ class OffersController < ApplicationController
       end
     end
 
-    raise
-
     if params[:query]
       @location = params[:query]
       @offers.each do |offer|
