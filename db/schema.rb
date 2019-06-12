@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_182453) do
   end
 
   create_table "offers", force: :cascade do |t|
+    t.start_date "date"
     t.date "date"
     t.integer "time"
     t.integer "length"

@@ -16,7 +16,7 @@ class OffersController < ApplicationController
       @offers = Offer.all.select { |offer| offer.court.address == params[:query] }
     elsif params[:date] != ""
 
-      @offers = Offer.all.select { |offer| offer.date == params[:datetimes].to_date }
+      @offers = Offer.all.select { |offer| offer.date == params[:datetimes] }
     end
   end
 
