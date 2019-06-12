@@ -36,6 +36,7 @@ class OffersController < ApplicationController
     end
   end
 
+
   private
 
   def offer_params
@@ -52,4 +53,7 @@ class OffersController < ApplicationController
     split = time.split(" ")
     return split[0]
   end
+
+
+
 end

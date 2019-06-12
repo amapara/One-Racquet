@@ -23,17 +23,17 @@
 <% end %>
 <% end %>
 
-<% if booking_array.empty? %>
-<p> No bookings in list <p>
-  <% else %>
+<% if current_user.bookings.empty? %>
+  <p> No bookings in list <p>
+<% else %>
   <ol>
-  <% booking_array.each do |offer_array| %>
-    <li>
-      <%= offer_array.date %>
-      <%= offer_array.time %>
-      <strong> <%= offer_array.court.name %> </strong>
-      <%= offer_array.court.address %>
-    </li>
-  <% end %>
+    <% current_user.bookings.each do |booking| %>
+      <li>
+        <%= booking.offer.date %>
+        <%= booking.offer.time %>
+        <strong> <%= booking.offer.court.name %> </strong>
+        <%= booking.offer.court.address %>
+      </li>
+    <% end %>
   </ol>
-  <%end %>
+<% end %>
