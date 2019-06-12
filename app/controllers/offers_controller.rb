@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 # !! When removing skip_before_action: take out :user_id from offer_params
@@ -9,12 +12,18 @@ class OffersController < ApplicationController
   end
 
   def index
+    @offers = Offer.all
     if params[:query]
-      @offers = Offer.all.select { |offer| offer.court.address == params[:query]}
+      @location = params[:query]
+      @offers.each do |offer|
+        offer.distance = distance(@location, offer.court.address)
+        offer.save
+      end
     else
-      @offers = Offer.all
+      # @offers = Offer.all
     end
   end
+
 
   def create
     @offer = Offer.new(offer_params)
@@ -31,5 +40,16 @@ class OffersController < ApplicationController
 
   def offer_params
     params.require(:offer).permit(:date, :time, :length, :court_id)
+  end
+
+  private
+
+  def distance(user_location, offer_location)
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{user_location}&destinations=#{offer_location}&key=ENV['GOOGLE_API_SERVER_KEY']"
+    serialized = open(url).read
+    details = JSON.parse(serialized)
+    time = details['rows'].first['elements'].first['duration']['text']
+    split = time.split(" ")
+    return split[0]
   end
 end
