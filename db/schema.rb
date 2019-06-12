@@ -32,8 +32,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_182453) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.date "date"
-    t.integer "time"
+    t.datetime "match_at"
     t.integer "length"
     t.integer "distance"
     t.bigint "user_id"

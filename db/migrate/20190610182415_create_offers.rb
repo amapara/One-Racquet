@@ -1,8 +1,7 @@
 class CreateOffers < ActiveRecord::Migration[5.2]
   def change
     create_table :offers do |t|
-      t.date :date
-      t.integer :time
+      t.datetime :match_at
       t.integer :length
       t.integer :distance
       t.references :user, foreign_key: true
