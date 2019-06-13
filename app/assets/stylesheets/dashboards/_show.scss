@@ -1,5 +1,5 @@
 body {
-  background: #CCF900;
+  background: $my-green;
 }
 
 
@@ -14,3 +14,18 @@ width: 90%;
 
 color: #4C5F6B;
 }
+
+
+$red: #FD1015;
+$blue: #167FFB;
+$yellow: #FFC65A;
+$orange: #E67E22;
+$green: #1EDD88;
+$gray: #0E0000;
+$light-gray: #F4F4F4;
+
+// Personal color scheme
+
+$my-green: #E7FF38;
+$my-blue: #6384b3;
+$my-yellow: #e6f0b6;
