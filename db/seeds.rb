@@ -16,13 +16,25 @@ puts 'Creating 5 fake users...'
   user.save!
 end
 
-address_sample = ["160 Broadway, New York, NY 10038, USA","52 Fulton St, New York, NY 10038, USA"]
+court_list =[
+  ["Waldschulallee 45, 14055 Berlin, Germany","Tennis club SCC Berlin e.V."],
+  ["Köpenicker Landstraße 186, 12437 Berlin, Germany","Treptower Teufel Tennis Club e.V."],
+  ["Roelckestraße 105, 13088 Berlin, Germany", "TCW Tennis Center GmbH tennis courts"],
+  ["Cantianstraße 24, 10437 Berlin, Germany", "TSG Break '90 e.V." ],
+  ["Treskowallee 209, 12459 Berlin, Germany", "Tennis Club Blue Gold Wuhlheide Berlin e.V."],
+  ["Franziusweg 114/128, 12307 Berlin, Germany", "TC White - Yellow Lichtenrade e.V."],
+  ["Melchiorstraße 19, 10179 Berlin, Germany", "TC Berlin Albert Gutzmann e.V."],
+  ["Blücherstraße 46, 10961 Berlin, Germany", "Tennis in Friedrichshain-Kreuzberg"],
+  ["Kruppstraße 16, 10557 Berlin, Germany", "Tennis-Club Tiergarten e. V. (Schwarz-Weiß)"],
+  ["Paradestraße 28-32, 12101 Berlin, Germany", "Berliner Tennis Club 1904 Grün-Gold e.V."]
+]
+
 puts 'Creating 10 tennis courts...'
-10.times do
+court_list.each do |address, name|
   court = Court.new(
-    address: address_sample.sample,
+    address: address,
     price: rand(5..20),
-    name: Faker::Movies::HarryPotter.house + " Club est. " + rand(1870..1999).to_s
+    name: name
     )
   court.save!
 end
