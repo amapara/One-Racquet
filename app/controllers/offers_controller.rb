@@ -12,7 +12,9 @@ class OffersController < ApplicationController
     @offer = Offer.new
   end
 
-    def index
+  def index
+
+    @user = current_user
 
     start_date = params[:start_date]
     start_split = start_date.split("")
@@ -24,24 +26,36 @@ class OffersController < ApplicationController
 
     @offers = Offer.where(match_at: start_date..end_date)
 
-    @offer_filt = []
+    @offer_filt_one = []
 
     @offers.each do |offer|
       time = offer.match_at.hour
       if time < end_time && time > start_time
-        @offer_filt << offer
+        @offer_filt_one << offer
       end
+    end
+
+    @offer_filt_two = []
+
+    @offer_filt_one.each do |offer|
+      if offer.user.skill == @user.skill
+        @offer_filt_two << offer
+      end
+    end
+
+    if @offer_filt_two.empty?
+      @offer_filt_two = @offer_filt_one
     end
 
     if params[:query]
       @location = params[:query]
-      @offers.each do |offer|
+      @offer_filt_two.each do |offer|
         offer.distance = distance(@location, offer.court.address)
         offer.save
       end
-    else
-      # @offers = Offer.all
     end
+
+      @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
   end
 
 
@@ -50,11 +64,12 @@ class OffersController < ApplicationController
     @offer.user = current_user
     if @offer.save
     #no need for app/views/offers/create.html.erb
-      redirect_to offers_path(@offer), notice: "Your offer was created!"
+      redirect_to dashboard_path, notice: "Your offer was created!"
     else
       render 'new'
     end
   end
+
 
   private
 
@@ -72,4 +87,7 @@ class OffersController < ApplicationController
     split = time.split(" ")
     return split[0]
   end
+
+
+
 end
