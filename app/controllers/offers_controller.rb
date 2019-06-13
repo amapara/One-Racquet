@@ -12,7 +12,7 @@ class OffersController < ApplicationController
     @offer = Offer.new
   end
 
-    def index
+  def index
 
     start_date = params[:start_date]
     start_split = start_date.split("")
@@ -35,13 +35,12 @@ class OffersController < ApplicationController
 
     if params[:query]
       @location = params[:query]
-      @offers.each do |offer|
+      @offer_filt.each do |offer|
         offer.distance = distance(@location, offer.court.address)
         offer.save
       end
-    else
-      # @offers = Offer.all
     end
+    @offer_filt_order = @offer_filt.sort_by { |x| x[:distance] }
   end
 
 
