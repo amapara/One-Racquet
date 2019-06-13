@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+
+// tennis-ball-color: rgb(199, 210, 35)
+
+body {
+  background-image: url("https://www.lawnstarter.com/blog/wp-content/uploads/2015/03/grass-small.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+
+
+.ready {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  // white-space: pre;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
+.card {
+  height: 400px;
+  width: 400px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 20px;
+}
+
+.form-items {
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+
+.location_text {
+  margin: 0;
+  margin-left: 50px;
+  margin-top: 2px;
+  padding-bottom: 0;
+}
+
+.start_date {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.submit-button {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  padding-left: 20px;
+}
