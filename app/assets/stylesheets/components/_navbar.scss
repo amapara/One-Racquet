@@ -1,12 +1,15 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
   justify-content: space-between;
   background: white;
+  border: solid;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+i {
+  // width: 60px;
+  font-family: FontAwesome;
+  color: rgb(206, 224, 36);
+  // margin-left: 8px;
+  // margin-top: 6px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}

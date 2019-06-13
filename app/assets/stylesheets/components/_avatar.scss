@@ -1,7 +1,22 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+
 }
+
+.avatar:after {
+    content: '';
+    display: block;
+    height: 40px;  /*height of icon */
+    width: 40px;  /*width of icon */
+    position: absolute;
+      /*where to replace the icon */
+    top: 0px;
+    left: -40px;
+      /*background */
+    background: #F8E6AE url(ico.gif) no-repeat 0px 0px;
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;

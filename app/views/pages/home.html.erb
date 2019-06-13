@@ -1,29 +1,41 @@
-<h2>Hello user.name!</h2>
-
-<h1>Ready to play?</h1>
-
-<h2>Please select your details:</h2>
-
-<!-- Look Up JS Range Picker for Time Range -->
-<!-- Come back to later -->
+<a href="https://www.lawnstarter.com/blog/wp-content/uploads/2015/03/grass-small.png" id="home_img"></a>
 
 
-<%= form_tag offers_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a offer"
-  %>
+<h1 class="ready">Ready to play?</h1>
 
-  <%= datetime_field_tag :start_date,
-    class: "form-control",
-    placeholder: "Select start date"
-   %>
+<div class="main">
+  <div class="card">
+  <h4>Please select your details:</h4>
+  <p class="location_text">Enter a court address:</p>
+  <div class="form-items">
+    <p id="fm-control">
+  <%= form_tag offers_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an offer"
+    %>
+  </p>
+  <p class="start_text">Select start date & time:</p>
+    <p class="start_date">
+    <%= datetime_field_tag :start_date,
+      class: "form-control",
+      placeholder: "Select start date"
+     %>
+    </p>
 
-  <%= datetime_field_tag :end_date,
-    class: "form-control",
-    placeholder: "Select end date"
-   %>
+    <p>Select end date & time:</p>
+    <p class="end_date">
+    <%= datetime_field_tag :end_date,
+      class: "form-control",
+      placeholder: "Select end date"
+     %>
+     </p>
 
-    <%= submit_tag "submit", class: "btn btn-primary" %>
-<% end %>
+      <p class="submit-button">
+      <%= submit_tag "submit", class: "btn btn-primary" %>
+      </p>
+  <% end %>
+  </div>
+  </div>
+</div>
