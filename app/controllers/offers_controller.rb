@@ -74,7 +74,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:date, :time, :length, :court_id)
+    params.require(:offer).permit(:match_at, :length, :court_id)
   end
 
   private
