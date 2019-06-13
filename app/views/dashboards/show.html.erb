@@ -1,21 +1,25 @@
-<h1>Welcome to your dashboard, <%= @user.name %></h1>
+<h1 id='header' class = 'text-center'>Welcome to your dashboard, <%= @user.name %></h1>
 
-<h2 class= "align-items"> Here's a list of your OFFERS: </h2>
+<div class='container' id ='container_offers'>
+
+<h2 class= "align-items"> Your Offers </h2>
 
 <ol>
   <% @user.offers.each do |offer| %>
   <% if offer.booked? == false %>
   <li>
-    <%= offer.date %>
-    <%= offer.time %>
     <strong> <%= offer.court.name %> </strong>
+      <p><%= offer.match_at %></p>
     <%= offer.court.address %>
   </li>
   <% end %>
 <% end %>
 </ol>
+</div>
 
-<h2 class= "align-items"> Here's a list of your BOOKINGS: </h2>
+<div class='container' id ='container_bookings'>
+
+<h2 class= "align-items"> Your Bookings: </h2>
 <% booking_array = [] %>
 <% @user.offers.each do |offer| %>
 <% if offer.booked? == true %>
@@ -29,8 +33,7 @@
   <ol>
     <% current_user.bookings.each do |booking| %>
       <li>
-        <%= booking.offer.date %>
-        <%= booking.offer.time %>
+        <%= booking.offer.match_at %>
         <strong> <%= booking.offer.court.name %> </strong>
         <%= booking.offer.court.address %>
       </li>
