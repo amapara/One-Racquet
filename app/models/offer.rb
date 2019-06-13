@@ -10,4 +10,9 @@ class Offer < ApplicationRecord
     booking.present?
   end
 
+  def book_offer
+
+    @offer.booking.present? == true
+  end
+
 end
