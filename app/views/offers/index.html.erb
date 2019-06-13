@@ -8,7 +8,7 @@
 <div class= 'col-sm-6'>
   <% @offers.each do |offer| %>
     <div class = 'card img-on-top'>
-      <h2> <%= offer.date %> - <%= offer.court.name %> - at <%= offer.time %>.00h - <%= offer.court.address  %></h2>
+      <h2> <%= offer.court.name %> - <%= offer.court.address  %></h2>
       <%= link_to 'book', new_offer_booking_path(offer)  %>
       <button type="button" class="btn btn-success">Book this offer</button>
     </div>

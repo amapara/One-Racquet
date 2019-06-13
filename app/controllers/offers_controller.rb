@@ -14,6 +14,8 @@ class OffersController < ApplicationController
 
   def index
 
+    @user = current_user
+
     start_date = params[:start_date]
     start_split = start_date.split("")
     start_time = "#{start_split[-5]}#{start_split[-4]}".to_i
@@ -24,23 +26,36 @@ class OffersController < ApplicationController
 
     @offers = Offer.where(match_at: start_date..end_date)
 
-    @offer_filt = []
+    @offer_filt_one = []
 
     @offers.each do |offer|
       time = offer.match_at.hour
       if time < end_time && time > start_time
-        @offer_filt << offer
+        @offer_filt_one << offer
       end
+    end
+
+    @offer_filt_two = []
+
+    @offer_filt_one.each do |offer|
+      if offer.user.skill == @user.skill
+        @offer_filt_two << offer
+      end
+    end
+
+    if @offer_filt_two.empty?
+      @offer_filt_two = @offer_filt_one
     end
 
     if params[:query]
       @location = params[:query]
-      @offer_filt.each do |offer|
+      @offer_filt_two.each do |offer|
         offer.distance = distance(@location, offer.court.address)
         offer.save
       end
     end
-    @offer_filt_order = @offer_filt.sort_by { |x| x[:distance] }
+
+      @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
   end
 
 
