@@ -18,15 +18,15 @@ end
 
 court_list =[
   ["Waldschulallee 45, 14055 Berlin, Germany","Tennis club SCC Berlin e.V."],
-  ["Kopenicker Landstraße 186, 12437 Berlin, Germany","Treptower Teufel Tennis Club e.V."],
+  ["Kopenicker Landstrase 186, 12437 Berlin, Germany","Treptower Teufel Tennis Club e.V."],
   ["Roelckestrase 105, 13088 Berlin, Germany", "TCW Tennis Center GmbH tennis courts"],
   ["Cantianstrase 24, 10437 Berlin, Germany", "TSG Break '90 e.V." ],
   ["Treskowallee 209, 12459 Berlin, Germany", "Tennis Club Blue Gold Wuhlheide Berlin e.V."],
   ["Franziusweg 114/128, 12307 Berlin, Germany", "TC White - Yellow Lichtenrade e.V."],
-  ["Melchiorstraße 19, 10179 Berlin, Germany", "TC Berlin Albert Gutzmann e.V."],
-  ["Blucherstraße 46, 10961 Berlin, Germany", "Tennis in Friedrichshain-Kreuzberg"],
-  ["Kruppstraße 16, 10557 Berlin, Germany", "Tennis-Club Tiergarten e. V. (Schwarz-Weiß)"],
-  ["Paradestraße 28-32, 12101 Berlin, Germany", "Berliner Tennis Club 1904 Grün-Gold e.V."]
+  ["Melchiorstrase 19, 10179 Berlin, Germany", "TC Berlin Albert Gutzmann e.V."],
+  ["Blucherstrase 46, 10961 Berlin, Germany", "Tennis in Friedrichshain-Kreuzberg"],
+  ["Kruppstrase 16, 10557 Berlin, Germany", "Tennis-Club Tiergarten e. V. (Schwarz-Weiß)"],
+  ["Paradestrase 28-32, 12101 Berlin, Germany", "Berliner Tennis Club 1904 Grün-Gold e.V."]
 ]
 
 puts 'Creating 10 tennis courts...'
