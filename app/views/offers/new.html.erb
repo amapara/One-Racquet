@@ -1,9 +1,10 @@
 <h1 class = 'text-success'>No suitable matches? Create your offer below! </h1>
 
 <%= simple_form_for @offer do |f| %>
+
   <%= f.input :date %>
   <%= f.input :time %>
   <p> <strong> Select a Court: </strong> </p>
-  <%= f.collection_select :court_id, Court.all, :id, :address %>
+  <%= f.collection_select :court_id, Court.all, :id, :name %>
   <%= f.submit "Add offer",:input_html =>{:class => "create"} %>
 <% end %>

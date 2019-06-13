@@ -8,6 +8,7 @@
   <li>
     <%= offer.date %>
     <%= offer.time %>
+    <strong> <%= offer.court.name %> </strong>
     <%= offer.court.address %>
   </li>
   <% end %>
@@ -30,6 +31,7 @@
     <li>
       <%= offer_array.date %>
       <%= offer_array.time %>
+      <strong> <%= offer_array.court.name %> </strong>
       <%= offer_array.court.address %>
     </li>
   <% end %>
