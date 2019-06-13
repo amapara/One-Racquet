@@ -1,13 +1,13 @@
 <h1 id='header' class = 'text-center'>Welcome to your dashboard, <%= @user.name %></h1>
 
-<div class='container' id ='container_offers'>
+<div class='card' id ='dashboard_card'>
 
 <h2 class= "align-items"> Your Offers </h2>
 
-<ol>
+<ul class="list-group list-group-flush">
   <% @user.offers.each do |offer| %>
   <% if offer.booked? == false %>
-  <li>
+  <li class="list-group-item">
     <strong> <%= offer.court.name %> </strong>
       <p><%= offer.match_at %></p>
     <%= offer.court.address %>
@@ -17,26 +17,20 @@
 </ol>
 </div>
 
-<div class='container' id ='container_bookings'>
+<div class='card' id ='dashboard_card'>
 
 <h2 class= "align-items"> Your Bookings: </h2>
-<% booking_array = [] %>
-<% @user.offers.each do |offer| %>
-<% if offer.booked? == true %>
-<% booking_array << offer %>
-<% end %>
-<% end %>
 
 <% if current_user.bookings.empty? %>
   <p> No bookings in list <p>
 <% else %>
-  <ol>
+  <ul class="list-group list-group-flush">
     <% current_user.bookings.each do |booking| %>
-      <li>
+      <li class="list-group-item">
         <%= booking.offer.match_at %>
         <strong> <%= booking.offer.court.name %> </strong>
         <%= booking.offer.court.address %>
       </li>
     <% end %>
-  </ol>
+  </ul>
 <% end %>
