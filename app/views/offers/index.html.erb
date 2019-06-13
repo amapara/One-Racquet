@@ -1,19 +1,22 @@
-
-<h1>Please list your offers here</h1>
-<h1><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
-
-
 <!-- <h1> This working  minutes</h1> -->
+<h1> Available offers </h1>
 
 <div class= 'col-sm-6'>
-  <% @offers.each do |offer| %>
+  <% @offer_filt_order.each do |offer| %>
     <div class = 'card img-on-top'>
-      <h2> <%= offer.court.name %> - <%= offer.court.address  %></h2>
+      <h2> <%= offer.court.name %> </h2>
+
+      <h2><%= offer.distance%> minutes drive </h2>
+
+      <h2> <%=offer.match_at%> </h2>
+
       <%= link_to 'book', new_offer_booking_path(offer)  %>
       <button type="button" class="btn btn-success">Book this offer</button>
     </div>
   <% end %>
 </div>
+
+<h1><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
 
 
 
