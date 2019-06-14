@@ -29,8 +29,7 @@ class OffersController < ApplicationController
     @offer_filt_one = []
 
     @offers.each do |offer|
-      time = offer.match_at.hour
-      if time < end_time && time > start_time
+      if offer.booked? == false
         @offer_filt_one << offer
       end
     end
@@ -38,24 +37,33 @@ class OffersController < ApplicationController
     @offer_filt_two = []
 
     @offer_filt_one.each do |offer|
-      if offer.user.skill == @user.skill
+      time = offer.match_at.hour
+      if time < end_time && time > start_time
         @offer_filt_two << offer
       end
     end
 
-    if @offer_filt_two.empty?
+    @offer_filt_three = []
+
+    @offer_filt_two.each do |offer|
+      if offer.user.skill == @user.skill
+        @offer_filt_three << offer
+      end
+    end
+
+    if @offer_filt_three.empty?
       @offer_filt_two = @offer_filt_one
     end
 
     if params[:query]
       @location = params[:query]
-      @offer_filt_two.each do |offer|
+      @offer_filt_three.each do |offer|
         offer.distance = distance(@location, offer.court.address)
         offer.save
       end
     end
 
-      @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
+      @offer_filt_order = @offer_filt_three.sort_by { |x| x[:distance] }
   end
 
 
