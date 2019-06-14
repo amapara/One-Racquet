@@ -1,4 +1,13 @@
-<h1>.. </h1>
+<h1> See below for your booking </h1>
+<h2> Please confirm details </h2>
+
+<ol>
+<li><%= @offer.court.name %> (<%= @offer.court.address %>)</li>
+
+<li><%= @offer.match_at.strftime("%A") %>, <%= @offer.match_at.strftime("%H") %>:00</li>
+
+
+</ol>
 
 <%= simple_form_for [@offer, @booking] do |f| %>
   <%= f.submit "Confirm booking",:input_html =>{:class => "create"} %>
