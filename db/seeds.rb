@@ -40,10 +40,11 @@ court_list.each do |address, name|
 end
 
 length_sample = [40,45,60,90]
+date = Time.now
 puts 'Creating 20 offers...'
 20.times do
   offer = Offer.new(
-    match_at: DateTime.now + (rand(0..72)/24.0),
+    match_at: DateTime.new(date.year, date.month, date.day + (rand(3)), rand(9..21)),
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,
