@@ -38,7 +38,7 @@ class OffersController < ApplicationController
 
     @offer_filt_one.each do |offer|
       time = offer.match_at.hour
-      if time < end_time && time > start_time
+      if time <= end_time && time >= start_time
         @offer_filt_two << offer
       end
     end
