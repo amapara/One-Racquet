@@ -3,40 +3,28 @@
 <div class="parallax">
 
 
-<div class='card rounded auto-height' id ='dashboard_card'>
+<div class='card auto-height' id ='dashboard_card'>
 
-  <h2 class= "card-header light-blue text-uppercase font-weight-bold text-center"> Your Offers: </h2>
+  <h2 class= "card-header light-blue text-uppercase font-weight-bold text-center"> Your Offers </h2>
 
-  <% if current_user.offers.empty? %>
-  <p> No offers in list <p>
-    <% else %>
-
-    <% current_user.offers.each do |offer| %>
+  <ul class="list-group list-group-flush">
+    <% @user.offers.each do |offer| %>
     <% if offer.booked? == false %>
-     <div class="card-horizontal">
-
-      <div class="img-square-wrapper">
-        <img id="img_card" src="http://via.placeholder.com/90x90" alt="Card image cap">
-      </div>
-       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
     <li class="list-group-item">
       <strong> <%= offer.court.name %> </strong>
       <p><%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00</p>
       <%= offer.court.address %>
     </li>
-  </ul>
     <% end %>
     <% end %>
-    <% end %>
-</div>
-</div>
 
+  </ul>
+</div>
 
 <!-- HIER FOLGT DAS ZIELFORMAT. Dh Bild ausgefüllt auf der linken Seite mit Details auf der rechten. Tenniscourt.name fett gedruckt, ansonsten ist die font-size die Gleiche. To do: wie mach ich einen line-break ohne die durch die <br> tags entstehenden Abstände? Sobald Text kleiner und formatiert ist, passt sich Bild an. Nächstes ToDo: Bilder im Seeding hinzufügen. ggf. zeilenumbruch in addresse, damit PLZ unterhalb der Straße ist? -->
 
 <div class='card auto-height' id ='dashboard_card'>
-  <h2 class= "card-header light-blue text-uppercase font-weight-bold text-center"> Your Bookings: </h2>
+  <h2 class= "card-header"> Your Bookings: </h2>
 
   <% if current_user.bookings.empty? %>
   <p> No bookings in list <p>
@@ -50,12 +38,12 @@
       </div>
 
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
+       <li class="list-group-item">
         <br><strong><%= booking.offer.court.name %></strong></br>
         <br><%= booking.offer.match_at.strftime("%A") %>, <%= booking.offer.match_at.strftime("%H") %>:00</br>
         <br><%= booking.offer.court.address %></br>
-        </li>
-      </ul>
+      </li>
+    </ul>
 
   </div>
   <% end %>
