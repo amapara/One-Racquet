@@ -17,6 +17,8 @@
       placeholder: "Find an offer"
     %>
   </p>
+
+
   <div id="flex">Select start date & time:</p>
 
      <label class="checkbox-button">
@@ -31,12 +33,12 @@
 
     <label class="checkbox-button">
       <input type="checkbox">
-      <div>Overmorrow</div>
+      <div>Oermorrow</div>
     </label>
 
     <p class="start_date">
     <%= datetime_field_tag :start_date,
-      class: "form-control",
+      class: "datepicker",
       placeholder: "Select start date"
      %>
     </div>
@@ -44,7 +46,7 @@
     <p>Select end date & time:</p>
     <p class="end_date">
     <%= datetime_field_tag :end_date,
-      class: "form-control",
+      class: "datepicker",
       placeholder: "Select end date"
      %>
      </p>
