@@ -1,4 +1,4 @@
-<h1 class = 'text-success'>No suitable matches? Create your offer below! </h1>
+<h1>No suitable matches? Create your offer below! </h1>
 
 <%= simple_form_for @offer do |f| %>
 
@@ -7,3 +7,26 @@
   <%= f.collection_select :court_id, Court.all, :id, :name %>
   <%= f.submit "Add offer",:input_html =>{:class => "create"} %>
 <% end %>
+<br>
+<br>
+
+  <h4> format that will be used </h4>
+  <div id="flex">Select date:</p>
+
+    <label class="checkbox-button">
+      <input type="checkbox">
+      <div>Today</div>
+    </label>
+
+    <label class="checkbox-button">
+      <input type="checkbox">
+      <div>Tomorrow</div>
+    </label>
+
+    <label class="checkbox-button">
+      <input type="checkbox">
+      <div>Overmorrow</div>
+    </label>
+
+
+    </div>
