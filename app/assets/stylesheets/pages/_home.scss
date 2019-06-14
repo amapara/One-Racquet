@@ -43,10 +43,41 @@ body {
   padding-bottom: 0;
 }
 
+#flex {
+  display: block;
+}
+
 .start_date {
   margin-top: 18px;
   margin-bottom: 18px;
 }
+
+
+.checkbox-button {
+  display: inline-block;
+  cursor: pointer;
+
+  // Hides checkboxes
+  input[type=checkbox] {
+     position: absolute;
+     top: -9999px;
+     left: -9999px;
+  }
+
+  // Button default appearance
+  div {
+     background: green;
+     padding: 1rem 1.5rem;
+     color: white;
+     text-align: center;
+  }
+
+  // Button toggled appearance
+  input[type=checkbox]:checked ~ div {
+     background: red;
+  }
+}
+
 
 .submit-button {
   left: 0;
@@ -54,3 +85,24 @@ body {
   position: absolute;
   padding-left: 20px;
 }
+
+.today {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  };
+  &.active {
+  color: red;
+  opacity: 1;
+  };
+}
+
+// .today
+// .tomorrow
+// .overmorrow
