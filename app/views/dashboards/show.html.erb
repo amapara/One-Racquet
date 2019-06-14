@@ -2,9 +2,10 @@
 
 <div class="parallax">
 
-<div class='card' id ='dashboard_card'>
 
-  <h2 class= "card-header light-blue lighten-1 white-text text-uppercase font-weight-bold text-center"> Your Offers </h2>
+<div class='card auto-height' id ='dashboard_card'>
+
+  <h2 class= "card-header light-blue text-uppercase font-weight-bold text-center"> Your Offers </h2>
 
   <ul class="list-group list-group-flush">
     <% @user.offers.each do |offer| %>
@@ -16,13 +17,14 @@
     </li>
     <% end %>
     <% end %>
+
   </ul>
 </div>
 
 <!-- HIER FOLGT DAS ZIELFORMAT. Dh Bild ausgefüllt auf der linken Seite mit Details auf der rechten. Tenniscourt.name fett gedruckt, ansonsten ist die font-size die Gleiche. To do: wie mach ich einen line-break ohne die durch die <br> tags entstehenden Abstände? Sobald Text kleiner und formatiert ist, passt sich Bild an. Nächstes ToDo: Bilder im Seeding hinzufügen. ggf. zeilenumbruch in addresse, damit PLZ unterhalb der Straße ist? -->
 
-<div class='card' id ='dashboard_card'>
-  <h2 class= "card-header border-bottom"> Your Bookings: </h2>
+<div class='card auto-height' id ='dashboard_card'>
+  <h2 class= "card-header"> Your Bookings: </h2>
 
   <% if current_user.bookings.empty? %>
   <p> No bookings in list <p>
