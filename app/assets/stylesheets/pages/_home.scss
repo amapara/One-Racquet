@@ -3,9 +3,19 @@
 // tennis-ball-color: rgb(199, 210, 35)
 
 body {
-  background-image: url("https://www.lawnstarter.com/blog/wp-content/uploads/2015/03/grass-small.png");
-  // background-size: cover;
-  // background-repeat: no-repeat;
+
+  /* The image used */
+  background-image: url("tennis-netting.jpg");
+
+
+  /* Set a specific 6ght */
+  height: auto;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 
@@ -86,6 +96,11 @@ body {
   padding-left: 20px;
 }
 
+
+.auto-height {
+  height: auto;
+}
+
 .today {
   background: #b7b7b7;
   padding: 20px;
@@ -106,3 +121,4 @@ body {
 // .today
 // .tomorrow
 // .overmorrow
+
