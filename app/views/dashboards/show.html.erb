@@ -12,7 +12,7 @@
     <% if offer.booked? == false %>
     <li class="list-group-item">
       <strong> <%= offer.court.name %> </strong>
-      <p><%= offer.match_at %></p>
+      <p><%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00</p>
       <%= offer.court.address %>
     </li>
     <% end %>
@@ -40,7 +40,7 @@
       <ul class="list-group list-group-flush">
        <li class="list-group-item">
         <br><strong><%= booking.offer.court.name %></strong></br>
-        <br><%= booking.offer.match_at %></br>
+        <br><%= booking.offer.match_at.strftime("%A") %>, <%= booking.offer.match_at.strftime("%H") %>:00</br>
         <br><%= booking.offer.court.address %></br>
       </li>
     </ul>
