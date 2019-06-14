@@ -1,5 +1,15 @@
-body {
-  background: $my-green;
+.parallax {
+  /* The image used */
+  background-image: url("tennis-netting.jpg");
+
+  /* Set a specific 6ght */
+  height: 1000px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 
@@ -8,13 +18,26 @@ body {
   color: #4C5F6B;
 }
 
-.container {
-background: white;
-width: 90%;
-
-color: #4C5F6B;
+#dashboard_card {
+  width: 92%;
+  color: $blue;
+  opacity: 0.85;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
 
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+    #img_card {
+      height:50px;
+    }
+    .card-body {
+      font-size: 10px;
+    }
+
+}
 
 $red: #FD1015;
 $blue: #167FFB;

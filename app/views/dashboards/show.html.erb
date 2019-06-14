@@ -1,36 +1,51 @@
 <h1 id='header' class = 'text-center'>Welcome to your dashboard, <%= @user.name %></h1>
 
-<div class='card' id ='dashboard_card'>
-
-<h2 class= "align-items"> Your Offers </h2>
-
-<ul class="list-group list-group-flush">
-  <% @user.offers.each do |offer| %>
-  <% if offer.booked? == false %>
-  <li class="list-group-item">
-    <strong> <%= offer.court.name %> </strong>
-      <p><%= offer.match_at %></p>
-    <%= offer.court.address %>
-  </li>
-  <% end %>
-<% end %>
-</ol>
-</div>
+<div class="parallax">
 
 <div class='card' id ='dashboard_card'>
 
-<h2 class= "align-items"> Your Bookings: </h2>
+  <h2 class= "card-header light-blue lighten-1 white-text text-uppercase font-weight-bold text-center"> Your Offers </h2>
 
-<% if current_user.bookings.empty? %>
-  <p> No bookings in list <p>
-<% else %>
   <ul class="list-group list-group-flush">
-    <% current_user.bookings.each do |booking| %>
-      <li class="list-group-item">
-        <%= booking.offer.match_at %>
-        <strong> <%= booking.offer.court.name %> </strong>
-        <%= booking.offer.court.address %>
-      </li>
+    <% @user.offers.each do |offer| %>
+    <% if offer.booked? == false %>
+    <li class="list-group-item">
+      <strong> <%= offer.court.name %> </strong>
+      <p><%= offer.match_at %></p>
+      <%= offer.court.address %>
+    </li>
+    <% end %>
     <% end %>
   </ul>
-<% end %>
+</div>
+
+<!-- HIER FOLGT DAS ZIELFORMAT. Dh Bild ausgefüllt auf der linken Seite mit Details auf der rechten. Tenniscourt.name fett gedruckt, ansonsten ist die font-size die Gleiche. To do: wie mach ich einen line-break ohne die durch die <br> tags entstehenden Abstände? Sobald Text kleiner und formatiert ist, passt sich Bild an. Nächstes ToDo: Bilder im Seeding hinzufügen. ggf. zeilenumbruch in addresse, damit PLZ unterhalb der Straße ist? -->
+
+<div class='card' id ='dashboard_card'>
+  <h2 class= "card-header border-bottom"> Your Bookings: </h2>
+
+  <% if current_user.bookings.empty? %>
+  <p> No bookings in list <p>
+    <% else %>
+
+    <% current_user.bookings.each do |booking| %>
+    <div class="card-horizontal">
+
+      <div class="img-square-wrapper">
+        <img id="img_card" src="http://via.placeholder.com/90x90" alt="Card image cap">
+      </div>
+
+      <ul class="list-group list-group-flush">
+       <li class="list-group-item">
+        <br><strong><%= booking.offer.court.name %></strong></br>
+        <br><%= booking.offer.match_at %></br>
+        <br><%= booking.offer.court.address %></br>
+      </li>
+    </ul>
+
+  </div>
+  <% end %>
+  <% end %>
+</div>
+</div>
+
