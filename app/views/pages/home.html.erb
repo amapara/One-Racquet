@@ -14,40 +14,28 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find an offer"
+      placeholder: "e.g., Kreuzeberg, Berlin"
     %>
   </p>
-  <div id="flex">Select start date & time:</p>
+  <div id="flex">Select dates:</p>
 
-     <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Today</div>
+    <label class="checkbox-button">
+      <input type="checkbox" name= "today">
+      <div><%= Date.today.strftime("%A") %></div>
     </label>
 
     <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Tomorrow</div>
+      <input type="checkbox" name= "tomorrow">
+      <div><%= (Date.today+1).strftime("%A") %></div>
     </label>
 
     <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Overmorrow</div>
+      <input type="checkbox" name= "overmorrow">
+      <div><%= (Date.today+2).strftime("%A") %></div>
     </label>
 
-    <p class="start_date">
-    <%= datetime_field_tag :start_date,
-      class: "form-control",
-      placeholder: "Select start date"
-     %>
-    </div>
+    <p>Select time range:</p>
 
-    <p>Select end date & time:</p>
-    <p class="end_date">
-    <%= datetime_field_tag :end_date,
-      class: "form-control",
-      placeholder: "Select end date"
-     %>
-     </p>
      <input type="text" class="js-range-slider" name="my_range" value="" />
       <p class="submit-button">
       <%= submit_tag "submit", class: "btn btn-primary" %>
