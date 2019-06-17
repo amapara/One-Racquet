@@ -54,6 +54,7 @@ class OffersController < ApplicationController
 
 
   def create
+    raise
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     if @offer.save

@@ -16,3 +16,4 @@ const initSlider = () => {
   }
 
 export {initSlider}
+
