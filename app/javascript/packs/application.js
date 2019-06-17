@@ -1,4 +1,5 @@
 import "bootstrap";
 import {initSlider} from '../components/slider';
-
-initSlider()
+import {initFlatPickr} from '../components/flatpickr'
+initSlider();
+initFlatPickr();

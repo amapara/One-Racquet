@@ -4,6 +4,15 @@
 
 <h1 class="ready">Ready to play?</h1>
 
+<%= form_with model: Offer.new, authenticity_token: true do |f| %>
+  <%= f.text_field :start_time,
+    data: {
+      controller: "flatpickr",
+      flatpickr_format: "Y-m-d",
+      flatpickr_min_date: Time.zone.now
+    } %>
+<% end %>
+
 <div class="main">
   <div class="card" id="home-card">
   <h4>Please select your details:</h4>
