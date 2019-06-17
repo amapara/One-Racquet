@@ -16,15 +16,10 @@ class OffersController < ApplicationController
 
     @user = current_user
 
-    start_date = params[:start_date]
-    start_split = start_date.split("")
-    start_time = "#{start_split[-5]}#{start_split[-4]}".to_i
+    dt = DateOptions.new(today: params[:today], tomorrow: params[:tomorrow], overmorrow: params[:overmorrow], time_range: params[:my_range])
 
-    end_date = params[:end_date]
-    end_split = end_date.split("")
-    end_time = "#{end_split[-5]}#{end_split[-4]}".to_i
+    @offers = Offer.where(match_at: dt.dates)
 
-    @offers = Offer.where(match_at: start_date..end_date)
 
     @offer_filt_one = []
 
@@ -37,37 +32,29 @@ class OffersController < ApplicationController
     @offer_filt_two = []
 
     @offer_filt_one.each do |offer|
-      time = offer.match_at.hour
-      if time <= end_time && time >= start_time
+      if offer.user.skill == @user.skill
         @offer_filt_two << offer
       end
     end
 
-    @offer_filt_three = []
-
-    @offer_filt_two.each do |offer|
-      if offer.user.skill == @user.skill
-        @offer_filt_three << offer
-      end
-    end
-
-    if @offer_filt_three.empty?
+    if @offer_filt_two.empty?
       @offer_filt_two = @offer_filt_one
     end
 
     if params[:query]
       @location = params[:query]
-      @offer_filt_three.each do |offer|
+      @offer_filt_two.each do |offer|
         offer.distance = distance(@location, offer.court.address)
         offer.save
       end
     end
 
-      @offer_filt_order = @offer_filt_three.sort_by { |x| x[:distance] }
+      @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
   end
 
 
   def create
+    raise
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     if @offer.save
@@ -85,8 +72,6 @@ class OffersController < ApplicationController
     params.require(:offer).permit(:match_at, :length, :court_id)
   end
 
-  private
-
   def distance(user_location, offer_location)
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{user_location}&destinations=#{offer_location}&key=#{ENV['GOOGLE_API_SERVER_KEY']}"
     serialized = open(url).read
@@ -95,7 +80,5 @@ class OffersController < ApplicationController
     split = time.split(" ")
     return split[0]
   end
-
-
 
 end
