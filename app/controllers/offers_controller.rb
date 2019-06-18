@@ -54,8 +54,11 @@ class OffersController < ApplicationController
 
 
   def create
-    raise
-    @offer = Offer.new(offer_params)
+    match_at = DateTime.parse("#{params[:day]} #{params[:options]}-3")
+    length = 60
+    user = current_user
+    court_id = params[:offer][:court_id]
+    @offer = Offer.new(match_at: match_at, length: length, user: user, court_id: court_id)
     @offer.user = current_user
     if @offer.save
     #no need for app/views/offers/create.html.erb
@@ -64,7 +67,6 @@ class OffersController < ApplicationController
       render 'new'
     end
   end
-
 
   private
 
