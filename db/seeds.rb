@@ -55,7 +55,7 @@ court_list.each do |address, name|
     price: rand(5..20),
     name: name,
     )
-  court.remote_photo_url = image_array.sample 
+  court.remote_photo_url = image_array.sample
   court.save!
 end
 

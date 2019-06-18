@@ -5,7 +5,8 @@
 
   <% @offer_filt_offer.each do |offer| %>
    <% @directionalBallZ += 1 %>
-    <div data-booking-path="<%= new_offer_booking_path(offer) %>" class = 'card img-on-top box' style="z-index: <%= @directionalBallZ %>">
+    <div data-booking-path="<%= new_offer_booking_path(offer) %>" class = 'card img-on-top box draggable-box' style="z-index: <%= @directionalBallZ %>">
+      <%= court.remote_photo_url %>
       <h2> <%= offer.court.name %> </h2>
 
       <h2><%= offer.distance%> minutes drive </h2>
@@ -17,9 +18,11 @@
       <% end %>
     </div>
   <% end %>
+  <div class = 'box' style="z-index: 0">
+    <h1><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
+  </div>
 </div>
 
-<h1><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
 
 <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
