@@ -6,7 +6,8 @@
   <% @offer_filt_offer.each do |offer| %>
    <% @directionalBallZ += 1 %>
     <div data-booking-path="<%= new_offer_booking_path(offer) %>" class = 'card img-on-top box draggable-box' style="z-index: <%= @directionalBallZ %>">
-      <%= court.remote_photo_url %>
+      <%= cl_image_tag offer.court.photo, id: "img_card", width: 300, height: 300 %>
+
       <h2> <%= offer.court.name %> </h2>
 
       <h2><%= offer.distance%> minutes drive </h2>
