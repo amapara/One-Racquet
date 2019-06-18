@@ -15,7 +15,6 @@
       <h2> <%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00 </h2>
 
       <%= link_to new_offer_booking_path(offer) do %>
-        <button type="button" class="btn btn-success">Book this offer</button>
       <% end %>
     </div>
   <% end %>
