@@ -1,13 +1,13 @@
 
 <a href="https://www.lawnstarter.com/blog/wp-content/uploads/2015/03/grass-small.png" id="home_img"></a>
 
+<div class="parallax">
 
-<h1 class="ready">Ready to play?</h1>
-
-<div class="main">
-  <div class="card" id="home-card">
-  <h4>Please select your details:</h4>
-  <p class="location_text">Enter a court address:</p>
+<div class='card auto-height' id ='dashboard_card'>
+<h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
+<br>
+  <h4>Search for a game:</h4>
+  <p class="location_text">Location:</p>
   <div class="form-items">
     <p id="fm-control">
   <%= form_tag offers_path, method: :get do %>
@@ -33,15 +33,37 @@
       <input type="checkbox" name= "overmorrow">
       <div><%= (Date.today+2).strftime("%A") %></div>
     </label>
+    <br>
+    <br>
 
     <p>Select time range:</p>
 
      <input type="text" class="js-range-slider" name="my_range" value="" />
-      <p class="submit-button">
-      <%= submit_tag "submit", class: "btn btn-primary" %>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="submit-button">
+      <%= submit_tag "Submit", class: "btn btn-primary" %>
       </p>
 
   <% end %>
   </div>
+  </div>
+</div>
+
+<h1 class="ready centre">Not used One Racquet before?</h1>
+
+<div class="parallax">
+
+<ul>
+  <li>Finds games with other players at a time and location that fits with your busy schedule</li>
+  <br>
+  <li>Allows you to suggest location and times to other players</li>
+  <br>
+  <li>Books courts automatically with registered partners</li>
+</ul>
+
   </div>
 </div>
