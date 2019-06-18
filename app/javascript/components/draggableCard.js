@@ -2,7 +2,8 @@
 import interact from 'interactjs'
 
 const draggableCardInit = () => {
-  interact('.box')
+
+  interact('.draggable-box')
     .draggable({
       // enable inertial throwing
       inertia: true,
@@ -30,6 +31,7 @@ const draggableCardInit = () => {
         const maxDistance = 150;
         if(distanceMoved > maxDistance) {
           // load route, offers/:id/bookings/new
+
           window.location = target.dataset.bookingPath
         } else if(distanceMoved < -maxDistance) {
           target.style.transform = 'translate(-500vw, 0px)';
