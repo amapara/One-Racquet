@@ -1,6 +1,9 @@
-<h1> See below for your booking </h1>
-<h2> Please confirm details </h2>
+<div class="parallax">
 
+<div class='card auto-height' id ='dashboard_card'>
+<h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Confirm booking</h2>
+
+<br>
 <ol>
 <li><%= @offer.court.name %> (<%= @offer.court.address %>)</li>
 
@@ -12,3 +15,6 @@
 <%= simple_form_for [@offer, @booking] do |f| %>
   <%= f.submit "Confirm booking",:input_html =>{:class => "create"} %>
 <% end %>
+</div>
+</div>
+
