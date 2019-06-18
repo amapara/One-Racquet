@@ -19,10 +19,9 @@
     </div>
     <br>
 
-    <div id="flex">Select match start time (maximum of two hours):</p>
+    <div id="flex">Select match start time:</p>
 
-    <div id="flex">Select day:</p>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <div class="btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-secondary active">
         <input type="radio" name="options" id="option1" autocomplete="off" value= "6:00" checked> 6:00
       </label>
@@ -68,10 +67,12 @@
   </div>
 </div>
 
+<br>
     <div id="flex">Select court:</p>
 
     <%= f.collection_select :court_id, Court.all, :id, :name %>
 
+    <br>
     <br>
 
     <%= f.submit %>
