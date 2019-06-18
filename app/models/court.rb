@@ -3,4 +3,6 @@ class Court < ApplicationRecord
 
   validates :address, presence: true
   validates :price, presence: true
+  mount_uploader :photo, PhotoUploader
 end
+
