@@ -1,32 +1,83 @@
 <h1>No suitable matches? Create your offer below! </h1>
 
 <%= simple_form_for @offer do |f| %>
+<div class="main">
+  <div class="card" id="home-card">
 
-  <%= f.input :match_at %>
-  <p> <strong> Select a Court: </strong> </p>
-  <%= f.collection_select :court_id, Court.all, :id, :name %>
-  <%= f.submit "Add offer",:input_html =>{:class => "create"} %>
-<% end %>
-<br>
-<br>
-
-  <h4> format that will be used </h4>
-  <div id="flex">Select date:</p>
-
-    <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Today</div>
-    </label>
-
-    <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Tomorrow</div>
-    </label>
-
-    <label class="checkbox-button">
-      <input type="checkbox">
-      <div>Overmorrow</div>
-    </label>
-
-
+  <div id="flex">Select day:</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="day" id="option1" autocomplete="off" value= <%= Date.today %> checked> <%= Date.today.strftime("%A") %>
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="day" id="option2" autocomplete="off" value= <%= Date.today +1 %>> <%= (Date.today+1).strftime("%A") %>
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="day" id="option3" autocomplete="off" value= <%= Date.today +2 %>> <%= (Date.today+2).strftime("%A") %>
+      </label>
     </div>
+    </div>
+    <br>
+
+    <div id="flex">Select match start time:</p>
+
+    <div class="btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="option1" autocomplete="off" value= "6:00" checked> 6:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2" autocomplete="off" value= "7:00"> 7:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" autocomplete="off" value= "8:00"> 8:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option4" autocomplete="off" value= "9:00"> 9:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option5" autocomplete="off" value= "10:00"> 10:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option6" autocomplete="off" value= "11:00"> 11:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option7" autocomplete="off" value= "12:00"> 12:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option8" autocomplete="off" value= "13:00"> 13:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option9" autocomplete="off" value= "14:00"> 14:00
+      </label>      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option10" autocomplete="off" value= "15:00"> 15:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option11" autocomplete="off" value= "16:00"> 16:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option12" autocomplete="off" value= "17:00"> 17:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option13" autocomplete="off" value= "18:00"> 18:00
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option14" autocomplete="off" value= "19:00"> 19:00
+      </label>
+    <br>
+  </div>
+</div>
+
+<br>
+    <div id="flex">Select court:</p>
+
+    <%= f.collection_select :court_id, Court.all, :id, :name %>
+
+    <br>
+    <br>
+
+    <%= f.submit %>
+
+</div>
+</div>
+<%end%>
+

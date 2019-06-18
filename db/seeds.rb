@@ -29,15 +29,37 @@ court_list =[
   ["Paradestrase 28-32, 12101 Berlin, Germany", "Berliner Tennis Club 1904 Grün-Gold e.V."]
 ]
 
+image_array =["https://res.cloudinary.com/dhladrgg9/image/upload/v1560805158/pzxsem92xaovqrf5vtgq.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805200/z97pehfq1zc5caa831vm.webp",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805194/jwpogdor050iq49vdual.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805189/a2naxvoe6c1iearrfdud.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805177/yf8b0fgkxhhrxg3o6o7h.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805171/hiuzf6v7bje6lvs3jspb.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805165/romub4zdubsjeok9csry.png",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805154/cyaiktfpbtlsfxlbatbu.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805148/mx5wofksrpcf7zqnwpfe.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805148/mx5wofksrpcf7zqnwpfe.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805139/k3siinmqscchnrmbxmmt.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805133/wqqhjo5vwjf3ncsrlspt.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805128/g9qq5vrrjygkc1h9dvbo.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805122/tyzgumjtbadlze2pouz9.gif",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805109/qwxrpblzfh3xz0kbolsh.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805103/wbmua6y8afbbnjtdsher.jpg",
+  "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805056/aww40fdey0mzsfotjhta.jpg",
+]
+
 puts 'Creating 10 tennis courts...'
 court_list.each do |address, name|
   court = Court.new(
     address: address,
     price: rand(5..20),
-    name: name
+    name: name,
     )
+  court.remote_photo_url = image_array.sample 
   court.save!
 end
+
+
 
 length_sample = [40,45,60,90]
 date = Time.now
