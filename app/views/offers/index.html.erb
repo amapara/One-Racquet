@@ -1,6 +1,6 @@
 <!-- <h1> This working  minutes</h1> -->
 <div class= 'parent-box'>
-   <% @offer_filt_offer = Offer.first(5) %>
+   <% @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
     <%  @directionalBallZ = 5 %>
 
   <% @offer_filt_offer.each do |offer| %>

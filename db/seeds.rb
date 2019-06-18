@@ -11,7 +11,7 @@ puts 'Creating 5 fake users...'
     name: Faker::Name.first_name,
     email: Faker::Internet.email,
     password: "password",
-    skill: skill_sample.sample,
+    skill: "medium",
     )
   user.save!
 end
@@ -63,10 +63,10 @@ end
 
 length_sample = [40,45,60,90]
 date = Time.now
-puts 'Creating 20 offers...'
-20.times do
+puts 'Creating 10 offers...'
+15.times do
   offer = Offer.new(
-    match_at: DateTime.new(date.year, date.month, date.day + (rand(3)), rand(9..21)),
+    match_at: DateTime.new(date.year, date.month, date.day + (rand(3)), rand(15..19)),
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,
@@ -74,8 +74,8 @@ puts 'Creating 20 offers...'
   offer.save!
 end
 
-puts 'Creating 10 bookings...'
-10.times do
+puts 'Creating 1 bookings...'
+1.times do
   booking = Booking.new(
     offer: Offer.all.sample,
     user: User.all.sample
