@@ -1,5 +1,5 @@
 <!-- <h1> This working  minutes</h1> -->
-<div class= 'parent-box'>
+<div class= 'parent-box' id = "smaller">
    <% @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
     <%  @directionalBallZ = 5 %>
 
@@ -14,7 +14,7 @@
 
       <%= cl_image_tag "https://res.cloudinary.com/dhladrgg9/image/upload/v1560955244/mgddwchm9v4ni18ajux0.png" , id: "img_card", width: 50, height: 50 %>
 
-      <h5> <%= offer.court.name %> </h5>
+      <h5 class ="padded-offer-index"> <%= offer.court.name %> </h5>
 
     </div>
 
@@ -23,7 +23,7 @@
     <div class ="inline">
 
       <%= cl_image_tag "https://res.cloudinary.com/dhladrgg9/image/upload/v1560955006/clzibzjms9mus1r0flzp.png", id: "img_card", width: 50, height: 50 %>
-      <h5><%= offer.distance%> minutes drive </h5>
+      <h5 class ="padded-offer-index"><%= offer.distance%> minutes drive </h5>
 
     </div >
     <br>
@@ -32,7 +32,7 @@
       <%= cl_image_tag "https://res.cloudinary.com/dhladrgg9/image/upload/v1560955199/ltfl2vubw22ktcafyyyl.png", id: "img_card", width: 50, height: 50  %>
 
 
-      <h5> <%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00 </h5>
+      <h5 class ="padded-offer-index"> <%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00 </h5>
 
     </div>
       <%= link_to new_offer_booking_path(offer) do %>
