@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  width: 100%
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -42,8 +43,13 @@ ul.navbar-nav.mr-auto .checkbox-button {
 
 .app_name {
   color: navy;
-  border-bottom-style: solid;
-  border-bottom-width: 1.5px;
-  margin-left: -112px;
-  margin-top: 20px;
+  // border-bottom-style: solid;
+  // border-bottom-width: 1px;
+  // margin-left: -86px;
+  margin-top: 25px;
 }
+
+.link-padding {
+  padding-right: 20px;
+}
+

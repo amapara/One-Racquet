@@ -15,14 +15,9 @@ class OffersController < ApplicationController
   def index
 
     @user = current_user
-
     dt = DateOptions.new(today: params[:today], tomorrow: params[:tomorrow], overmorrow: params[:overmorrow], time_range: params[:my_range])
-
     @offers = Offer.where(match_at: dt.dates)
-
-
     @offer_filt_one = []
-
     @offers.each do |offer|
       if offer.booked? == false
         @offer_filt_one << offer
@@ -30,7 +25,6 @@ class OffersController < ApplicationController
     end
 
     @offer_filt_two = []
-
     @offer_filt_one.each do |offer|
       if offer.user.skill == @user.skill
         @offer_filt_two << offer
@@ -82,5 +76,4 @@ class OffersController < ApplicationController
     split = time.split(" ")
     return split[0]
   end
-
 end
