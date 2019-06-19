@@ -81,11 +81,13 @@ body {
   }
 
   // Button default appearance
-  div {
-     background: green;
-     padding: 1rem 1.5rem;
+  #date_box {
+     background: $green;
+     padding: 13px;
      color: white;
      text-align: center;
+     border-radius: 6px;
+     margin: 4px;
   }
 
   // Button toggled appearance
@@ -95,11 +97,17 @@ body {
 }
 
 
-.submit-button {
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  padding-left: 20px;
+#submit_button {
+  margin-left: auto;
+  margin-right: 10px;
+  color: white;
+  background-color: $my-blue;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+
 }
 
 
