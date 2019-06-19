@@ -16,6 +16,13 @@ puts 'Creating 5 fake users...'
   user.save!
 end
 
+# User.new(
+#   name: "Gary Oak",
+#   email: "fakeaddress19072019@gmail.com",
+#   password: "ashSux",
+#   skill: "god"
+#   )
+
 court_list =[
   ["Waldschulallee 45, 14055 Berlin, Germany","Tennis club SCC Berlin e.V."],
   ["Kopenicker Landstrase 186, 12437 Berlin, Germany","Treptower Teufel Tennis Club e.V."],
