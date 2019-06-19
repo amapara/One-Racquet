@@ -9,9 +9,9 @@ class DateOptions
   def dates
     # Array of dates
     dt = []
-    dt << ((DateTime.parse("#{Date.today.to_s} #{@time_range[0]}-3"))..(DateTime.parse("#{Date.today.to_s} #{@time_range[1]}-3"))) if @today
-    dt << ((DateTime.parse("#{Date.tomorrow.to_s} #{@time_range[0]}-3"))..(DateTime.parse("#{Date.tomorrow.to_s} #{@time_range[1]}-3"))) if @tomorrow
-    dt << ((DateTime.parse("#{(Date.today + 2).to_s} #{@time_range[0]}-3"))..(DateTime.parse("#{(Date.today + 2).to_s} #{@time_range[1]}-3"))) if @overmorrow
+    dt << ((DateTime.parse("#{Date.today.to_s} #{@time_range[0]}"))..(DateTime.parse("#{Date.today.to_s} #{@time_range[1]}"))) if @today
+    dt << ((DateTime.parse("#{Date.tomorrow.to_s} #{@time_range[0]}"))..(DateTime.parse("#{Date.tomorrow.to_s} #{@time_range[1]}"))) if @tomorrow
+    dt << ((DateTime.parse("#{(Date.today + 2).to_s} #{@time_range[0]}"))..(DateTime.parse("#{(Date.today + 2).to_s} #{@time_range[1]}"))) if @overmorrow
     dt
   end
 end
