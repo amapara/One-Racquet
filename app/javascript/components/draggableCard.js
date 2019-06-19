@@ -22,13 +22,13 @@ const draggableCardInit = () => {
         // translate the element
         target.style.webkitTransform =
         target.style.transform = 'translate(0px, 0px)';
-        target.style.transition = 'transform 1s ease';
+        target.style.transition = 'transform 0.75s ease';
 
         // update the posiion attributes
         target.setAttribute('data-x', 0);
         target.setAttribute('data-y', 0);
 
-        const maxDistance = 150;
+        const maxDistance = 145;
         if(distanceMoved > maxDistance) {
           // load route, offers/:id/bookings/new
 

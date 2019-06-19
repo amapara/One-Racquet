@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 45px;
 }
 
 i {
@@ -18,7 +18,7 @@ i {
 
 
 ul.navbar-nav.mr-auto .checkbox-button {
-  background: blue;
+  background: red;
   padding: 1rem 1.5rem;
   color: white;
   text-align: center;
@@ -27,4 +27,23 @@ ul.navbar-nav.mr-auto .checkbox-button {
 
 #dashboard-btn {
   padding-right: 20px;
+}
+
+.site-name {
+  font-family: $logo2-font;
+  font-size: 25px;
+  font-style: light;
+
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 14px;
+  padding-top: 2px;
+}
+
+.app_name {
+  color: navy;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-left: -86px;
+  margin-top: 20px;
 }
