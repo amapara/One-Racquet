@@ -30,17 +30,17 @@
 
     <label class="checkbox-button">
       <input type="checkbox" name= "today">
-      <div><%= Date.today.strftime("%A") %></div>
+      <div id = "date_box"><%= Date.today.strftime("%A") %></div>
     </label>
 
     <label class="checkbox-button">
       <input type="checkbox" name= "tomorrow">
-      <div><%= (Date.today+1).strftime("%A") %></div>
+      <div id = "date_box"><%= (Date.today+1).strftime("%A") %></div>
     </label>
 
     <label class="checkbox-button">
       <input type="checkbox" name= "overmorrow">
-      <div><%= (Date.today+2).strftime("%A") %></div>
+      <div id = "date_box"><%= (Date.today+2).strftime("%A") %></div>
     </label>
     <br>
     <br>
@@ -50,12 +50,8 @@
      <input type="text" class="js-range-slider" name="my_range" value="" />
 
     <br>
-    <br>
-    <br>
-    <br>
-    <p class="submit-button">
-      <%= submit_tag "Submit", class: "btn btn-primary" %>
-      </p>
+   
+    <button type="submit" id="submit_button" class="btn btn-primary">Find your match!</button>
 
   <% end %>
   </div>
