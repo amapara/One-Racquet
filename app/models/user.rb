@@ -15,4 +15,9 @@ class User < ApplicationRecord
     puts "hi"
     UserMailer.with(user: self).welcome.deliver_now
   end
+
+  def mail
+    puts "hi"
+    UserMailer.with(offer: self).booking.deliver_now
+  end
 end
