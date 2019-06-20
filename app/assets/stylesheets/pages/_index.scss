@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+ background-color: $my-blue;
+}
+
 .center {
   text-align: center;
   padding-top: 20px;
@@ -17,3 +21,4 @@
   padding-left: 10px;
   text-align:left;
 }
+

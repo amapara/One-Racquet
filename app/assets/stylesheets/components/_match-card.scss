@@ -1,0 +1,103 @@
+$card-radius: 16px;
+$card-distance: 12px;
+
+.match-cards {
+  margin: 0 auto;
+  position: relative;
+  min-height: calc(100vh - 70px);
+  
+  .match-card {
+    border: 1px solid #656565;
+    border-width: 0 1px 1px 0;
+    position: absolute;
+    top: $card-distance;
+    bottom: $card-distance;
+    left: $card-distance;
+    right: $card-distance;
+    border-radius: $card-radius;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    font-family: "Roboto";
+
+    .match-card-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 0.75rem 0.75rem 1.75rem;
+      background-image: linear-gradient(rgba(0,0,0,0.625), rgba(0,0,0,0));
+      border-radius: $card-radius $card-radius 0 0;
+    }      
+
+    .match-card-image {
+      background-size: cover;
+      background-position: center;
+      flex-grow: 1;
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      border-radius: $card-radius $card-radius 0 0;
+    }
+
+    .match-card-info {
+      text-align: center;
+      background-color: #fff;
+      padding: 1.25rem 1rem;
+      border-radius: 0 0 $card-radius $card-radius;
+
+      .location {
+        font-size: 1rem;
+      }
+        
+      .time {
+        font-size: 1.75rem;
+      }
+        
+      p {
+        font-weight: light;
+        margin-top: 0;
+        margin-bottom: 0.125rem;
+      }
+
+      .buttons {
+        font-size: 3.5rem;
+        display: flex;
+        justify-content: center;
+
+        > div {
+          padding: 0.5rem 1rem 0;
+        }
+      }
+        
+      .accept {
+        color: #1edd88 !important;
+      }
+      
+      .reject {
+        color: #FD1015 !important;
+      }
+    }
+  }
+
+  .match-card:nth-child(3) {
+    top: $card-distance + 2px;
+    left: $card-distance + 2px;
+    bottom: $card-distance - 2px;
+    right: $card-distance - 2px;    
+  }
+
+  .match-card:nth-child(2) {
+    top: $card-distance + 4px;
+    left: $card-distance + 4px;
+    bottom: $card-distance - 4px;
+    right: $card-distance - 4px;    
+  }
+}
+
+#no_offer_available {
+  background-color: white;
+}
