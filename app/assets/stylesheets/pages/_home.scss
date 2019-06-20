@@ -16,7 +16,9 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
+  background-color: $my-blue;
 }
+
 
 .ready {
   display: block;
@@ -82,7 +84,7 @@ body {
 
   // Button default appearance
   #date_box {
-     background: $green;
+     background: $my-blue;
      padding: 13px;
      color: white;
      text-align: center;
@@ -91,8 +93,8 @@ body {
   }
 
   // Button toggled appearance
-  input[type=checkbox]:checked ~ div {
-     background: red;
+  input[type=checkbox]:checked ~ #date_box {
+     background: $my-blue;
   }
 }
 
@@ -101,9 +103,10 @@ body {
   margin-left: auto;
   margin-right: 10px;
   color: white;
-  background-color: $my-blue;
+  background-color: $my-yellow;
   width: 100%;
   border-radius: 5px;
+  border-color: $my-yellow;
   margin-top: 10px;
   margin-bottom: 15px;
 
@@ -130,6 +133,10 @@ body {
   color: red;
   opacity: 1;
   };
+}
+
+#more-info {
+  color: white;
 }
 
 //if user sign in show log in

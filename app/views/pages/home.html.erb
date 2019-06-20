@@ -2,67 +2,63 @@
 <a href="https://www.lawnstarter.com/blog/wp-content/uploads/2015/03/grass-small.png" id="home_img"></a>
 
 
-<div class="row" style="max-width: 100%;">
- <div class="col-sm-12 col-md-6 offset-md-3">
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Keen on playing tennis</h1>
+    <p>One Racquet finds a match for you</p>
 
-
-
-<div class="parallax">
-
-
+    <%= link_to "Find out more", "#more", class: "btn btn-lg btn-primary"  %>
+    <%= link_to "Start matching", "#dashboard_card", class: "btn btn-lg btn-primary"  %>
+  </div>
+</div>
 
 
 <div class='card auto-height' id ='dashboard_card'>
-<h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
-<br>
+  <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
+  <br>
   <h4>Search for a game:</h4>
-  <p class="location_text">Location:</p>
+  
   <div class="form-items">
-    <p id="fm-control">
-  <%= form_tag offers_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "e.g., Kreuzeberg, Berlin"
-    %>
-  </p>
-  <div id="flex">Select dates:</p>
+    <%= form_tag offers_path, method: :get do %>
+      <div class="form-group">
+        <label for="query">Location:</label>      
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "e.g., Kreuzberg, Berlin" %>
+      </div>
 
-    <label class="checkbox-button">
-      <input type="checkbox" name= "today">
-      <div id = "date_box"><%= Date.today.strftime("%A") %></div>
-    </label>
+      <p id="flex">Select dates:</p>
+      <label class="checkbox-button">
+        <input type="checkbox" name= "today">
+        <div id = "date_box"><%= Date.today.strftime("%A") %></div>
+      </label>
 
-    <label class="checkbox-button">
-      <input type="checkbox" name= "tomorrow">
-      <div id = "date_box"><%= (Date.today+1).strftime("%A") %></div>
-    </label>
+      <label class="checkbox-button">
+        <input type="checkbox" name= "tomorrow">
+        <div id = "date_box"><%= (Date.today+1).strftime("%A") %></div>
+      </label>
 
-    <label class="checkbox-button">
-      <input type="checkbox" name= "overmorrow">
-      <div id = "date_box"><%= (Date.today+2).strftime("%A") %></div>
-    </label>
-    <br>
-    <br>
+      <label class="checkbox-button">
+        <input type="checkbox" name= "overmorrow">
+        <div id = "date_box"><%= (Date.today+2).strftime("%A") %></div>
+      </label>
+      <br>
+      <br>
 
-    <p>Select time range:</p>
+      <p>Select time range:</p>
 
-     <input type="text" class="js-range-slider" name="my_range" value="" />
+      <input type="text" class="js-range-slider" name="my_range" value="" />
 
-    <br>
+      <br>
 
-    <button type="submit" id="submit_button" class="btn btn-primary">Find your match!</button>
+      <button type="submit" id="submit_button" class="btn btn-primary">Find your match!</button>
 
-  <% end %>
-  </div>
+    <% end %>
   </div>
 </div>
-</div>
-</div>
 
 
 
-<h1 class="ready centre">New to One Raquet?</h1>
+<div id = "more-info">
+<h1 id="more" class="ready centre">New to One Raquet?</h1>
 <div class="parallax">
 <ul>
   <li>Finds games with other players at a time and location that fits with your busy schedule</li>
@@ -71,7 +67,9 @@
   <br>
   <li>Books courts automatically with registered partners</li>
 </ul>
+</div>
       </div>
     </div>
+
 
 
