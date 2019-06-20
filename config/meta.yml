@@ -1,0 +1,4 @@
+meta_product_name: "One Racquet"
+meta_title: "One Racquet - find tennis matches"
+meta_description: "Find tennis matches at a time and location that suits you"
+meta_image: "tenniscourt.jpg" # should exist in `app/assets/images/`
