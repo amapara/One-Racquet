@@ -14,6 +14,7 @@ class UserMailer < ApplicationMailer
 
   def booking
     @booking = params[:booking]
-    mail(to: @user.email, subject: 'Booking made')
+    @user = @booking.user
+    mail(to: @booking.offer.user.email, subject: 'Booking made')
   end
 end
