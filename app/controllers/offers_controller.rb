@@ -43,7 +43,7 @@ class OffersController < ApplicationController
       end
     end
 
-      @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
+    @offer_filt_order = @offer_filt_two.sort_by { |x| x[:distance] }
   end
 
 
@@ -72,8 +72,8 @@ class OffersController < ApplicationController
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{user_location}&destinations=#{offer_location}&key=#{ENV['GOOGLE_API_SERVER_KEY']}"
     serialized = open(url).read
     details = JSON.parse(serialized)
-    time = details['rows'].first['elements'].first['duration']['text']
-    split = time.split(" ")
-    return split[0]
+    time = details.dig('rows', 0, 'elements', 0, 'duration', 'text')
+    split = time&.split(" ")
+    return split&.first
   end
 end
