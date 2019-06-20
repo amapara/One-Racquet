@@ -4,7 +4,7 @@
 
 <div class="banner">
   <div class="banner-content text-center">
-    <h1>Keen on playing tennis</h1>
+    <h1>KEEN ON PLAYING TENNIS?</h1>
     <p>One Racquet finds a match for you</p>
 
     <%= link_to "Find out more", "#more", class: "btn btn-lg btn-primary"  %>
@@ -12,64 +12,73 @@
   </div>
 </div>
 
+<div class="blue-wrapper">
+  <div class='card auto-height' id ='dashboard_card'>
+    <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
+    <div class="card-body">
+      <h4>Search for a game:</h4>
+      
+      <div class="form-items">
+        <%= form_tag offers_path, method: :get do %>
+          <div class="form-group">
+            <label for="query">Location:</label>      
+            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "e.g., Kreuzberg, Berlin" %>
+          </div>
 
-<div class='card auto-height' id ='dashboard_card'>
-  <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
-  <br>
-  <h4>Search for a game:</h4>
-  
-  <div class="form-items">
-    <%= form_tag offers_path, method: :get do %>
-      <div class="form-group">
-        <label for="query">Location:</label>      
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "e.g., Kreuzberg, Berlin" %>
+          <p id="flex">Select dates:</p>
+          <label class="checkbox-button">
+            <input type="checkbox" name= "today">
+            <div id = "date_box">
+              <%= icon("far", "square") %>
+              <%= icon("far", "check-square") %>
+              <%= Date.today.strftime("%A") %>
+            </div>
+          </label>
+
+          <label class="checkbox-button">
+            <input type="checkbox" name= "tomorrow">
+            <div id = "date_box">
+              <%= icon("far", "square") %>
+              <%= icon("far", "check-square") %>
+              <%= (Date.today+1).strftime("%A") %>
+            </div>
+          </label>
+
+          <label class="checkbox-button">
+            <input type="checkbox" name= "overmorrow">
+            <div id = "date_box">
+              <%= icon("far", "square") %>
+              <%= icon("far", "check-square") %>
+              <%= (Date.today+2).strftime("%A") %>
+            </div>
+          </label>
+          <br>
+          <br>
+
+          <p>Select time range:</p>
+
+          <input type="text" class="js-range-slider" name="my_range" value="" />
+
+          <br>
+
+          <button type="submit" id="submit_button" class="btn btn-primary">Find your match!</button>
+
+        <% end %>
       </div>
-
-      <p id="flex">Select dates:</p>
-      <label class="checkbox-button">
-        <input type="checkbox" name= "today">
-        <div id = "date_box"><%= Date.today.strftime("%A") %></div>
-      </label>
-
-      <label class="checkbox-button">
-        <input type="checkbox" name= "tomorrow">
-        <div id = "date_box"><%= (Date.today+1).strftime("%A") %></div>
-      </label>
-
-      <label class="checkbox-button">
-        <input type="checkbox" name= "overmorrow">
-        <div id = "date_box"><%= (Date.today+2).strftime("%A") %></div>
-      </label>
-      <br>
-      <br>
-
-      <p>Select time range:</p>
-
-      <input type="text" class="js-range-slider" name="my_range" value="" />
-
-      <br>
-
-      <button type="submit" id="submit_button" class="btn btn-primary">Find your match!</button>
-
-    <% end %>
-  </div>
-</div>
-
-
-
-<div id = "more-info">
-<h1 id="more" class="ready centre">New to One Raquet?</h1>
-<div class="parallax">
-<ul>
-  <li>Finds games with other players at a time and location that fits with your busy schedule</li>
-  <br>
-  <li>Allows you to suggest location and times to other players</li>
-  <br>
-  <li>Books courts automatically with registered partners</li>
-</ul>
-</div>
-      </div>
+      
     </div>
+  </div>
 
 
 
+  <div id="more-info" class="container fullscreen-element">
+    <h2>New to One Raquet?</h2>    
+    <ul>
+      <li>Finds games that fits with your schedule</li>
+      <br>
+      <li>Set your own matches</li>
+      <br>
+      <li>Books courts automatically with registered partners</li>
+    </ul>
+  </div>
+</div>  
