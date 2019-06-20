@@ -4,4 +4,6 @@ class Booking < ApplicationRecord
 
   validates :offer, presence: true
   validates :user, presence: true
+
+
 end

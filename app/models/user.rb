@@ -8,4 +8,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
+
+  after_create :send_mail
+
+  def send_mail
+    puts "hi"
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 end
