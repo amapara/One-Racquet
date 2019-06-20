@@ -24,16 +24,16 @@ end
 #   )
 
 court_list =[
-  ["Waldschulallee 45, 14055 Berlin, Germany","Tennis club SCC Berlin e.V."],
-  ["Kopenicker Landstrase 186, 12437 Berlin, Germany","Treptower Teufel Tennis Club e.V."],
-  ["Roelckestrase 105, 13088 Berlin, Germany", "TCW Tennis Center GmbH tennis courts"],
-  ["Cantianstrase 24, 10437 Berlin, Germany", "TSG Break '90 e.V." ],
-  ["Treskowallee 209, 12459 Berlin, Germany", "Tennis Club Blue Gold Wuhlheide Berlin e.V."],
-  ["Franziusweg 114/128, 12307 Berlin, Germany", "TC White - Yellow Lichtenrade e.V."],
-  ["Melchiorstrase 19, 10179 Berlin, Germany", "TC Berlin Albert Gutzmann e.V."],
-  ["Blucherstrase 46, 10961 Berlin, Germany", "Tennis in Friedrichshain-Kreuzberg"],
-  ["Kruppstrase 16, 10557 Berlin, Germany", "Tennis-Club Tiergarten e. V. (Schwarz-Weiß)"],
-  ["Paradestrase 28-32, 12101 Berlin, Germany", "Berliner Tennis Club 1904 Grün-Gold e.V."]
+  ["Waldschulallee 45, 14055 Berlin, Germany","Waldschulallee - Tennis club SCC Berlin e.V."],
+  ["Kopenicker Landstrase 186, 12437 Berlin, Germany","Kopenicker Landstrase - Treptower Teufel Tennis Club e.V."],
+  ["Roelckestrase 105, 13088 Berlin, Germany", "Roelckestrase - TCW Tennis Center GmbH tennis courts"],
+  ["Cantianstrase 24, 10437 Berlin, Germany", "Cantianstrase - TSG Break '90 e.V." ],
+  ["Treskowallee 209, 12459 Berlin, Germany", "Treskowallee - Tennis Club Blue Gold Wuhlheide Berlin e.V."],
+  ["Franziusweg 114/128, 12307 Berlin, Germany", "Franziusweg - TC White - Yellow Lichtenrade e.V."],
+  ["Melchiorstrase 19, 10179 Berlin, Germany", "Melchiorstrase - TC Berlin Albert Gutzmann e.V."],
+  ["Blucherstrase 46, 10961 Berlin, Germany", "Blucherstrase - Tennis in Friedrichshain-Kreuzberg"],
+  ["Kruppstrase 16, 10557 Berlin, Germany", "Kruppstrase - Tennis-Club Tiergarten e. V. (Schwarz-Weiß)"],
+  ["Paradestrase 28-32, 12101 Berlin, Germany", "Paradestrase - Berliner Tennis Club 1904 Grün-Gold e.V."]
 ]
 
 image_array =["https://res.cloudinary.com/dhladrgg9/image/upload/v1560805158/pzxsem92xaovqrf5vtgq.jpg",
