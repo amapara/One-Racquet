@@ -73,7 +73,7 @@ date = Time.now
 puts 'Creating 10 offers...'
 15.times do
   offer = Offer.new(
-    match_at: DateTime.new(date.year, date.month, date.day + (rand(3)), rand(15..19)),
+    match_at: DateTime.new(date.year, date.month, date.day + (rand(3)), rand(9..12)),
     length: length_sample.sample,
     user: User.all.sample,
     court: Court.all.sample,
