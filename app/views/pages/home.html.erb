@@ -17,21 +17,19 @@
     <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
     <div class="card-body">
       <h4>Search for a game:</h4>
-      
+
       <div class="form-items">
         <%= form_tag offers_path, method: :get do %>
           <div class="form-group">
-            <label for="query">Location:</label>      
-            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "e.g., Kreuzberg, Berlin" %>
+            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Where do you want to play?" %>
           </div>
 
-          <p id="flex">Select dates:</p>
           <label class="checkbox-button">
             <input type="checkbox" name= "today">
             <div id = "date_box">
               <%= icon("far", "square") %>
               <%= icon("far", "check-square") %>
-              <%= Date.today.strftime("%A") %>
+              <%= Date.today.strftime("%a") %>
             </div>
           </label>
 
@@ -40,7 +38,7 @@
             <div id = "date_box">
               <%= icon("far", "square") %>
               <%= icon("far", "check-square") %>
-              <%= (Date.today+1).strftime("%A") %>
+              <%= (Date.today+1).strftime("%a") %>
             </div>
           </label>
 
@@ -49,13 +47,11 @@
             <div id = "date_box">
               <%= icon("far", "square") %>
               <%= icon("far", "check-square") %>
-              <%= (Date.today+2).strftime("%A") %>
+              <%= (Date.today+2).strftime("%a") %>
             </div>
           </label>
           <br>
           <br>
-
-          <p>Select time range:</p>
 
           <input type="text" class="js-range-slider" name="my_range" value="" />
 
@@ -65,14 +61,23 @@
 
         <% end %>
       </div>
-      
+
     </div>
   </div>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
   <div id="more-info" class="container fullscreen-element">
-    <h2>New to One Raquet?</h2>    
+    <h2>New to One Raquet?</h2>
+    <br>
     <ul>
       <li>Finds games that fits with your schedule</li>
       <br>
@@ -81,4 +86,4 @@
       <li>Books courts automatically with registered partners</li>
     </ul>
   </div>
-</div>  
+</div>
