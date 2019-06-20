@@ -2,7 +2,7 @@
 import interact from 'interactjs'
 
 const draggableCardInit = () => {
-
+  console.log('hiiiii')
   interact('.draggable-box')
     .draggable({
       // enable inertial throwing
