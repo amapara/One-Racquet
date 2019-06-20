@@ -7,7 +7,7 @@
 
 
       <div class='card auto-height' id ='dashboard_card'>
-        <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Your potential matches: </h2>
+        <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Potential matches: </h2>
         <% if current_user.offers.select{ |offer| !(offer.booked?) }.empty? %>
         <p> No offers in list <p>
           <% else %>
@@ -34,7 +34,7 @@
       <!-- HIER FOLGT DAS ZIELFORMAT. Dh Bild ausgefüllt auf der linken Seite mit Details auf der rechten. Tenniscourt.name fett gedruckt, ansonsten ist die font-size die Gleiche. To do: wie mach ich einen line-break ohne die durch die <br> tags entstehenden Abstände? Sobald Text kleiner und formatiert ist, passt sich Bild an. Nächstes ToDo: Bilder im Seeding hinzufügen. ggf. zeilenumbruch in addresse, damit PLZ unterhalb der Straße ist? -->
 
       <div class='card auto-height' id ='dashboard_card'>
-        <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Your confirmed matches: </h2>
+        <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Confirmed matches: </h2>
 
         <% if current_user.bookings.empty? %>
         <p> No bookings in list <p>
