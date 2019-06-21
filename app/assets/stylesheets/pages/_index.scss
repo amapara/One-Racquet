@@ -22,3 +22,38 @@ body {
   text-align:left;
 }
 
+.submit_offer {
+	background-color: $green;
+	border-radius: 10px;
+	border-color: $green;
+	width: 100%;
+}
+
+#db_card_home {
+  padding:2px;
+  border-radius: 10px;
+  width: 92%;
+  color: $blue;
+  opacity: 0.93;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  left: 3px;
+
+  li {
+    padding: 3px;
+  }
+  #header_card {
+    background-color: $my-yellow;
+    
+    color: white;
+    letter-spacing: 0.08em;
+    word-spacing: 3px;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: -3px;
+    margin-left: -3px;
+    margin-right: -3px;
+  }
+
+}

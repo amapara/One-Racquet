@@ -99,5 +99,35 @@ $card-distance: 12px;
 }
 
 #no_offer_available {
-  background-color: white;
-}
+  color: white;
+  background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.38)), image-url("sad_face.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+      text-align: center;
+      background-color: #fff;
+      padding: 1.25rem 1rem;
+      border-radius:  $card-radius ;
+      h1 {
+        color:white;
+      }
+      p {
+        font-family: $body-font;
+      }
+      .button_index {
+        background-color: $green;
+        color: white;
+        border-radius: 14px;
+        border-color: $green;
+        width: 100%;
+        padding: 15px;
+        bottom: 0;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ 
+        }
+        
+  }
+
+

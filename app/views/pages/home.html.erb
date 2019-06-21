@@ -8,15 +8,15 @@
     <p>One Racquet finds a match for you</p>
 
     <%= link_to "Find out more", "#more", class: "btn btn-lg btn-primary"  %>
-    <%= link_to "Start matching", "#dashboard_card", class: "btn btn-lg btn-primary"  %>
+    <%= link_to "Start matching", "#db_card_home", class: "btn btn-lg btn-primary"  %>
   </div>
 </div>
 
 <div class="blue-wrapper">
-  <div class='card auto-height' id ='dashboard_card'>
+  <div class='card auto-height' id ='db_card_home'>
     <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Ready to play? </h2>
     <div class="card-body">
-      <h4>Search for a game:</h4>
+      <h4 class= "text-center">Search for a game:</h4>
 
       <div class="form-items">
         <%= form_tag offers_path, method: :get do %>

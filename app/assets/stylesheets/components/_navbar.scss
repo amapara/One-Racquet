@@ -1,3 +1,8 @@
+
+body {
+  height: 50px;
+
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -13,7 +18,11 @@
 
 i {
   font-family: FontAwesome;
-  color: $my-yellow;
+  color: $green;
+}
+
+.x_swipe {
+  color: $red;
 }
 
 
@@ -31,21 +40,20 @@ ul.navbar-nav.mr-auto .checkbox-button {
 
 .site-name {
   font-family: $logo2-font;
-  font-size: 25px;
+  font-size: 18px;
   font-style: light;
 
-  padding: 2px;
-  padding-left: 18px;
+  padding-bottom: 2px;
+  padding-left: 14px;
   padding-right: 14px;
-  padding-top: 2px;
+  padding-top: 6px;
 }
 
 .app_name {
   color: navy;
 
-  border-bottom-style: solid;
-  border-bottom-width: 1.5px;
-  margin-left: -112px;
-  margin-top: 20px;
+
+  margin-top: 4px;
+  margin-left: -111px;
 }
 

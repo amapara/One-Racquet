@@ -1,11 +1,21 @@
 <!-- <h1> This working  minutes</h1> -->
 <div class= 'parent-box match-cards' id = "smaller">
-  <div class = 'box' style="z-index: 0" id="no_offer_available">
-    <h1 ><%= link_to "No suitable match?", new_offer_path %></h1>
-    <i class="far fa-sad-cry"></i>
-    <p> no need to feel sad! Click here to create an Offer!
+
+
+  <div class = 'box no_offer_box' style="z-index: 0" id="no_offer_available">
+    <div>
+       <h2 class="text-center">NO SUITABLE MATCH?</h2>
+ 
+     <p class="text-center text-bold">NO NEED TO FEEL SAD...</p>
+    </div>
+    <div class="container">   
+   
+      <%= link_to "CREATE YOUR OWN OFFER", new_offer_path, class: "button_index btn btn-lg btn-primary"  %>
+    </div>
   </div>
-   <% @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
+
+
+   <% @offer_filt_offer =   @offer_filt_order.reverse.first(5) %>
   <% @offer_filt_offer.each do |offer| %>
 
     <div data-booking-path="<%= new_offer_booking_path(offer) %>" class="match-card draggable-box">
@@ -18,7 +28,7 @@
         <p class="time"><%= offer.match_at.strftime("%A") %>, <%= offer.match_at.strftime("%H") %>:00</p>
         <div class="buttons">
           <div class="reject">
-            <i class="far fa-times-circle"></i>
+            <i class="far fa-times-circle x_swipe"></i>
           </div>
           <div class="accept">
             <i class="far fa-check-circle"></i>
