@@ -1,9 +1,11 @@
 <!-- <h1> This working  minutes</h1> -->
 <div class= 'parent-box match-cards' id = "smaller">
   <div class = 'box' style="z-index: 0" id="no_offer_available">
-    <h1 ><%= link_to "No suitable match? Click here to create an Offer!", new_offer_path %></h1>
+    <h1 ><%= link_to "No suitable match?", new_offer_path %></h1>
+    <i class="far fa-sad-cry"></i>
+    <p> no need to feel sad! Click here to create an Offer!
   </div>
-  <% @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
+    <% @offer_filt_offer = [] %>
   <% @offer_filt_offer.each do |offer| %>
 
     <div data-booking-path="<%= new_offer_booking_path(offer) %>" class="match-card draggable-box">
@@ -27,3 +29,14 @@
     </div>
   <% end %>
 </div>
+
+
+
+<%# USE THIS IN LINE 6/7 TO FIX THE 'NO SUITABLE MATCHES...'
+ <%# @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
+  <%# @offer_filt_offer = [] %>
+
+
+<%# USE THIS IN LINE 6/7 TO FIX THE 'NO SUITABLE MATCHES...'
+    <%# @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
+  <%# @offer_filt_offer.each do |offer| %>
