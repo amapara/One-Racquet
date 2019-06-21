@@ -12,6 +12,6 @@ class DashboardsController < ApplicationController
       end
     end
 
-    @bookings.sort_by! { |booking| booking.match_at }
+    @bookings.sort_by! { |booking| booking.offer.match_at }
   end
 end
