@@ -6,7 +6,7 @@
 <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Create a new match </h2>
   <br>
 
-  <div id="flex">
+  <div id="flex" class='text-center'>
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-secondary active">
         <input type="radio" name="day" id="option1" autocomplete="off" value= <%= Date.today %> checked> <%= Date.today.strftime("%A") %>
@@ -21,7 +21,7 @@
     </div>
     <br>
 
-    <div id="flex">
+    <div  id="flex" class='text-center date_box_time'>
 
     <div class="btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-secondary active">
@@ -70,14 +70,14 @@
 </div>
 
 <br>
-    <div id="flex">
+    <div class="text-center">
 
-    <%= f.collection_select :court_id, Court.all, :id, :name %>
+    <%= f.collection_select :court_id, Court.all, :id, :name, placeholder: "Choose your Court" %>
 
     <br>
     <br>
 
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-lg btn-primary submit_offer" %>
 
 </div>
 </div>

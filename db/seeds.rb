@@ -32,19 +32,19 @@ court_list =[
   },
   {
     name: "Treptower Teufel Tennis Club e.V.",
-    address: "Kopenicker Landstrase 186, 12437 Berlin, Germany",
+    address: "Kopenicker Landstrasse 186, 12437 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805200/z97pehfq1zc5caa831vm.webp",
     price: rand(5..20)
   },
   {
-    name: "TCW Tennis Center GmbH tennis courts",
-    address: "Roelckestrase 105, 13088 Berlin, Germany",
+    name: "TCW Tennis Center",
+    address: "Roelckestrasse 105, 13088 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805194/jwpogdor050iq49vdual.jpg",
     price: rand(5..20)
   },
   {
     name: "TSG Pause '90 e.V." ,
-    address: "Cantianstrase 24, 10437 Berlin, Germany",
+    address: "Cantianstrasse 24, 10437 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805189/a2naxvoe6c1iearrfdud.jpg",
     price: rand(5..20)
   },
@@ -55,32 +55,32 @@ court_list =[
     price: rand(5..20)
   },
   {
-    name: "TC White - Yellow Lichtenrade e.V.",
+    name: "TC White - Gelb Lichtenrade e.V.",
     address: "Franziusweg 114/128, 12307 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805171/hiuzf6v7bje6lvs3jspb.jpg",
     price: rand(5..20)
   },
   {
     name: "TC Berlin Albert Gutzmann e.V.",
-    address: "Melchiorstrase 19, 10179 Berlin, Germany",
+    address: "Melchiorstrasse 19, 10179 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805165/romub4zdubsjeok9csry.png",
     price: rand(5..20)
   },
   {
     name: "Tennis in Friedrichshain-Kreuzberg",
-    address: "Blucherstrase 46, 10961 Berlin, Germany",
+    address: "Blucherstrasse 46, 10961 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805154/cyaiktfpbtlsfxlbatbu.jpg",
     price: rand(5..20)
   },
   {
     name: "Tennis-Club Tiergarten e. V. (Schwarz-Weiß)",
-    address: "Kruppstrase 16, 10557 Berlin, Germany",
+    address: "Kruppstrasse 16, 10557 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805148/mx5wofksrpcf7zqnwpfe.jpg",
     price: rand(5..20)
   },
   {
     name: "Berliner Tennis Club 1904 Grün-Gold e.V.",
-    address: "Paradestrase 28-32, 12101 Berlin, Germany",
+    address: "Paradestrasse 28-32, 12101 Berlin, Germany",
     remote_photo_url: "https://res.cloudinary.com/dhladrgg9/image/upload/v1560805139/k3siinmqscchnrmbxmmt.jpg",
     price: rand(5..20)
   }
