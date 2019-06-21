@@ -5,7 +5,7 @@
     <i class="far fa-sad-cry"></i>
     <p> no need to feel sad! Click here to create an Offer!
   </div>
-    <% @offer_filt_offer = [] %>
+   <% @offer_filt_offer = @offer_filt_order.reverse.first(5) %>
   <% @offer_filt_offer.each do |offer| %>
 
     <div data-booking-path="<%= new_offer_booking_path(offer) %>" class="match-card draggable-box">
