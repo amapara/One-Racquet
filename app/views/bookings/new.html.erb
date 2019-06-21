@@ -3,16 +3,19 @@
 <div class='card auto-height' id ='dashboard_card'>
 <h2 class= "card-header light-blue text-uppercase text-center" id="header_card"> Confirm booking </h2>
 
-<ol>
+<ul>
 <li><%= @offer.court.name %> (<%= @offer.court.address %>)</li>
 
 <li><%= @offer.match_at.strftime("%A") %>, <%= @offer.match_at.strftime("%H") %>:00</li>
 
 
-</ol>
+</ul>
 
 <%= simple_form_for [@offer, @booking] do |f| %>
-  <%= f.submit "Confirm booking",:input_html =>{:class => "create"} %>
+  <div class ="text-center">
+  <%= f.submit "Confirm booking",:class => "create button_index btn btn-lg btn-primary" %>
+  </div>
 <% end %>
 </div>
 </div>
+
