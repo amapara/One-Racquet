@@ -5,7 +5,7 @@ $card-distance: 12px;
   margin: 0 auto;
   position: relative;
   min-height: calc(100vh - 70px);
-  
+
   .match-card {
     border: 1px solid #656565;
     border-width: 0 1px 1px 0;
@@ -32,7 +32,7 @@ $card-distance: 12px;
       padding: 0.75rem 0.75rem 1.75rem;
       background-image: linear-gradient(rgba(0,0,0,0.625), rgba(0,0,0,0));
       border-radius: $card-radius $card-radius 0 0;
-    }      
+    }
 
     .match-card-image {
       background-size: cover;
@@ -52,11 +52,11 @@ $card-distance: 12px;
       .location {
         font-size: 1rem;
       }
-        
+
       .time {
         font-size: 1.75rem;
       }
-        
+
       p {
         font-weight: light;
         margin-top: 0;
@@ -72,11 +72,11 @@ $card-distance: 12px;
           padding: 0.5rem 1rem 0;
         }
       }
-        
+
       .accept {
         color: #1edd88 !important;
       }
-      
+
       .reject {
         color: #FD1015 !important;
       }
@@ -87,14 +87,14 @@ $card-distance: 12px;
     top: $card-distance + 2px;
     left: $card-distance + 2px;
     bottom: $card-distance - 2px;
-    right: $card-distance - 2px;    
+    right: $card-distance - 2px;
   }
 
   .match-card:nth-child(2) {
     top: $card-distance + 4px;
     left: $card-distance + 4px;
     bottom: $card-distance - 4px;
-    right: $card-distance - 4px;    
+    right: $card-distance - 4px;
   }
 }
 
@@ -117,17 +117,17 @@ $card-distance: 12px;
         font-family: $body-font;
       }
       .button_index {
-        background-color: $green;
+        background-color: $my-yellow;
         color: white;
         border-radius: 14px;
-        border-color: $green;
+        border-color: $my-yellow;
         width: 100%;
         padding: 15px;
         bottom: 0;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
- 
+
         }
-        
+
   }
 
 

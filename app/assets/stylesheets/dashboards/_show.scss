@@ -14,7 +14,7 @@
   opacity: 0.93;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-bottom: 25px;
   left: 3px;
 
@@ -22,8 +22,8 @@
     padding: 3px;
   }
   #header_card {
-    background-color: $my-blue;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), #fafafb4f);
+    background-color: $my-yellow;
+
     color: white;
     letter-spacing: 0.08em;
     word-spacing: 3px;
@@ -38,10 +38,10 @@
     display: flex;
     flex: 1 1 auto;
     #img_card {
-     
+
       position: relative;
       top: 20%;
-      
+
       border-radius: 5px;
 
     }
