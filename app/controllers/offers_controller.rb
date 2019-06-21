@@ -48,7 +48,7 @@ class OffersController < ApplicationController
 
 
   def create
-    match_at = DateTime.parse("#{params[:day]} #{params[:options]}-3")
+    match_at = DateTime.parse("#{params[:day]} #{params[:options]}")
     length = 60
     user = current_user
     court_id = params[:offer][:court_id]
